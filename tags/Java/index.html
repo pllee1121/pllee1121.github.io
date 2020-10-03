@@ -17,23 +17,10 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>方法 - 李朋亮的博客</title>
+  <title>标签 - Java - 李朋亮的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
-    
-  
-
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -56,7 +43,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -160,51 +147,6 @@
             </span>
 
             
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-02 20:00" pubdate>
-        2020年10月2日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1k 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      10
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="false"></i>
-        <span id="leancloud-post-views"></span> 次
-      </span>
-    
-  
-</div>
-
-            
           </div>
 
           
@@ -215,156 +157,37 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
+      <p class="h5">2020</p>
+    
+    <a href="/2020/10/02/%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">方法</span>
+      <time style="float: right;">10-02</time>
+    </a>
+  
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto" id="post">
-            <!-- SEO header -->
-            <h1 style="display: none">方法</h1>
-            
-              <p class="note note-info">
-                
-                  本文最后更新于：2020年10月3日 晚上
-                
-              </p>
-            
-            <div class="markdown-body" id="post-body">
-              <h1 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h1>
-<p>函数也叫方法或者功能</p>
-<p>就是可以用来完成特定功能的代码块，有名字，还可以传参数。可以用来重复使用</p>
-<p>定义和使用</p>
-<h2 id="方法的定义"><a class="markdownIt-Anchor" href="#方法的定义"></a> 方法的定义</h2>
-<p>位置：类中，所有的方法之外</p>
-<p>语法：</p>
-<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> 返回值类型 方法名(类型 变量名<span class="hljs-number">1</span>, 类型 变量名<span class="hljs-number">2</span>)&#123;
-    方法体； 实现功能的具体步骤
-&#125;</code></pre></div>
-<p>public 权限修饰符：公开的</p>
-<p>static : 静态， 现在可以直接在主方法中调用</p>
-<p>返回值类型：</p>
-<p>​	<code>void</code> : 方法没有返回值</p>
-<p>​	类型 ： 方法有返回值</p>
-<p>方法名：方法的标记，方便后期调用和查找</p>
-<p>(): 可以传入参数</p>
-<p>{}: 执行步骤</p>
-<p>定义方法的步骤：1、根据需求，看出方法的功能  2、根据功能给方法取一个见名知意的名字 3、根据题意确定方法的参数（自己不能确定的，需要外界指定的） 4、根据题意确定方法是否需要返回值</p>
-<p>注意：方法分定义和执行，如果只有定义，方法是不生效，要能够执行方法，方法必须在主方法中直接或间接被调用</p>
-<h2 id="方法的调用"><a class="markdownIt-Anchor" href="#方法的调用"></a> 方法的调用</h2>
-<p>位置：主方法</p>
-<p>语法： 方法名(实参列表)</p>
-<h2 id="方法的分类"><a class="markdownIt-Anchor" href="#方法的分类"></a> 方法的分类</h2>
-<p>根据方法是否有返回值以及参数</p>
-<p>无参无返回值：好比你跟你爸要生活费， 你不需要送礼，你也得不到任何东西</p>
-<p>无参带返回值：好比你跟你你妈要生活费，不需要任何付出，但是可以得到回馈</p>
-<p>带参无返回值：好比你去玩游戏，投入了时间和金钱，但是最后什么都没有了</p>
-<p>有参有返回值：好比你去商店买东西，一手交钱，一手交货</p>
-<h3 id="参数"><a class="markdownIt-Anchor" href="#参数"></a> 参数</h3>
-<p>定义：形式参数（变量）， 类型，名称，数量</p>
-<p>​		类型：规定实参给的数据的类型</p>
-<p>​		名称：在方法体内部使用这个变量（数据）</p>
-<p>​		数量：规定实参的数量</p>
-<p>调用：实参（数据）</p>
-<p>​	实参会将数据按照位置 依次给到形参，个数、类型必须和形参匹配</p>
-<p>有多少个形参就必须有多少个实参，类型兼容</p>
-<h3 id="返回值"><a class="markdownIt-Anchor" href="#返回值"></a> 返回值</h3>
-<p>方法头：包括修饰符，返回值，方法名，参数列表</p>
-<p>返回值：规定了方法执行之后是否有结果送出，是什么类型</p>
-<p><code>void</code> : 在方法体中，不能有返回值， 在<code>return</code>后面不能跟数据</p>
-<p>非<code>void</code>: 在方法体中，必须有return ，后面必须跟数据，数据的类型必须和返回值类型兼容</p>
-<h3 id="return-关键字"><a class="markdownIt-Anchor" href="#return-关键字"></a> return 关键字</h3>
-<p>只能出现在方法体中</p>
-<p>1、提前结束方法，结束这个方法</p>
-<p>2、送出返回值</p>
-<h3 id="目标"><a class="markdownIt-Anchor" href="#目标"></a> 目标</h3>
-<p>根据需求定义一个方法</p>
-<p>​	位置</p>
-<p>​	带参，返回值</p>
-<p>看见一个方法，通过方法的说明（告诉你方法是干嘛的），源码， 正确调用一个方法</p>
-<p>定义方法： 随机10次生成 合法的成绩，想办法统计及格率</p>
-<p>方法的调用，其实就是将方法进行压栈处理，每一个方法被调用到都会被存入栈顶，一旦方法执行结束之后，就会从栈顶弹出去。</p>
-<h3 id="方法的参数值传递"><a class="markdownIt-Anchor" href="#方法的参数值传递"></a> 方法的参数值传递</h3>
-<p>方法定义（代码）</p>
-<p>调用到的时候，才会执行 -&gt; 需要将代码（指令）加载到内存，方法栈，栈（局部变量）</p>
-<p>方法签名是调用方法的唯一标识：方法名+参数列表（类型，个数，顺序）</p>
-<p>在一个类中，方法签名必须唯一</p>
-<p>在主方法（直接|间接）调用其他方法的时候都是通过方法签名去找方法的</p>
-<h2 id="方法重载"><a class="markdownIt-Anchor" href="#方法重载"></a> 方法重载</h2>
-<p>名字很重要</p>
-<p>如果多个方法完成的功能是类似的，你的方法名可以相同，但是必须要整，形参列表不同（个数，类型，顺序）</p>
-<p>重载的滥用</p>
-<h2 id="递归"><a class="markdownIt-Anchor" href="#递归"></a> 递归</h2>
-<p>一个方法直接或间接调用自己，就是递归</p>
-<p>递归体：方法本身要做的事情</p>
-<p>递归头：停止递归的条件</p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
-                    
-                  </div>
-                
+
               </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <article class="post-prev col-6">
-                    
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2020/10/02/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-  <div class="col-lg-7 mx-auto nopadding-md">
-    <div class="container custom post-content mx-auto">
-      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
-    </div>
-  </div>
-
-
     
   </main>
 
@@ -586,10 +409,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('true' === 'true') {
+      if ('false' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/10/02/%E6%96%B9%E6%B3%95/');
+          var target = decodeURI('/tags/Java/index.html');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -651,31 +474,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '#post-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 6,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -683,7 +481,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "方法&nbsp;",
+        "标签 - Java&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
@@ -698,23 +496,6 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-      icon: "♦︎"
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
 
 
   <script  src="/js/local-search.js" ></script>
@@ -728,20 +509,6 @@
   </script>
 
 
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
-      }
-    );
-  </script>
 
 
 
