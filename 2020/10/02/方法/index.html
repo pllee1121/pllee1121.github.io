@@ -7,17 +7,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/pllee1121/pictureRepository/raw/master/favicon.png">
-  <link rel="icon" type="image/png" href="https://gitee.com/pllee1121/pictureRepository/raw/master/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <link rel="icon" type="image/png" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>方法 - Hexo</title>
+  <title>方法 - 李朋亮的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -150,7 +150,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://gitee.com/pllee1121/pictureRepository/raw/master/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -165,8 +165,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-03 00:00" pubdate>
-        2020年10月3日 凌晨
+      <time datetime="2020-10-02 20:00" pubdate>
+        2020年10月2日 晚上
       </time>
     </span>
   
@@ -229,7 +229,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年10月3日 凌晨
+                  本文最后更新于：2020年10月3日 晚上
                 
               </p>
             
@@ -608,7 +608,7 @@
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/10/03/%E6%96%B9%E6%B3%95/');
+          var target = decodeURI('/2020/10/02/%E6%96%B9%E6%B3%95/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -704,8 +704,8 @@
         '  ',
         "方法&nbsp;",
       ],
-      cursorChar: "_",
-      typeSpeed: 70,
+      cursorChar: "|",
+      typeSpeed: 50,
       loop: false,
     });
     typed.stop();
@@ -722,6 +722,8 @@
     anchors.options = {
       placement: "right",
       visible: "hover",
+      
+      icon: "♦︎"
       
     };
     var el = "h1,h2,h3,h4,h5,h6".split(",");
