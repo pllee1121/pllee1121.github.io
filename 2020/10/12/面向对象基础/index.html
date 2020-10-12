@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>Hello World - lpliang&#39;s space</title>
+  <title>面向对象基础 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -165,8 +165,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-02 19:48" pubdate>
-        2020年10月2日 晚上
+      <time datetime="2020-10-12 21:22" pubdate>
+        2020年10月12日 晚上
       </time>
     </span>
   
@@ -177,7 +177,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      76 字
+      636 字
     </span>
   
 
@@ -187,7 +187,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      7
        分钟
     </span>
   
@@ -225,7 +225,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">面向对象基础</h1>
             
               <p class="note note-info">
                 
@@ -234,20 +234,130 @@
               </p>
             
             <div class="markdown-body" id="post-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<div class="hljs"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre></div>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<div class="hljs"><pre><code class="hljs bash">$ hexo server</code></pre></div>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<div class="hljs"><pre><code class="hljs bash">$ hexo generate</code></pre></div>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<div class="hljs"><pre><code class="hljs bash">$ hexo deploy</code></pre></div>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+              <h3 id="继承"><a class="markdownIt-Anchor" href="#继承"></a> 继承</h3>
+<p>在 <code>Java</code>中继承使用 <code>extends</code>关键字,不像C++中存在多继承只存在单继承即子类只能有一个直接父类.</p>
+<h4 id="继承的优点"><a class="markdownIt-Anchor" href="#继承的优点"></a> 继承的优点</h4>
+<blockquote>
+<p>继承可以降低代码冗余度,可以把多个类中共同的代码抽象出来,减少相同代码的重复编写</p>
+</blockquote>
+<p>在 <code>Java</code>中子类继承父类除 <code>构造方法</code>外的所有属性<br />
+<code>instanceof</code>关键字的使用规则 <code>对象 instanceof 类名</code>判断对象是否时某个类的对象, <code>Object</code>类是所有类的父类,因此在使用 <code>instanceof</code>判断的时候返回值都是 <code>true</code></p>
+<p>父类Person类</p>
+<div class="hljs"><pre><code class="hljs java">
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;
+
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sleep</span><span class="hljs-params">()</span> </span>&#123;
+        System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>&#123;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.age = age;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> name;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.name = name;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> age;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.age = age;
+    &#125;
+
+&#125;</code></pre></div>
+<p>Student子类继承Person类</p>
+<div class="hljs"><pre><code class="hljs java">
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+        Student student = <span class="hljs-keyword">new</span> Student();
+        student.setId(<span class="hljs-number">1234</span>);
+        student.sleep();
+        System.out.println(student.id);
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-keyword">return</span> id;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span> </span>&#123;
+        <span class="hljs-keyword">this</span>.id = id;
+    &#125;
+
+&#125;</code></pre></div>
+<div class="hljs"><pre><code class="hljs 运行结果">睡觉
+1234
+true</code></pre></div>
+<hr />
+<h3 id="封装"><a class="markdownIt-Anchor" href="#封装"></a> 封装</h3>
+<h4 id="在封装中使用的关键字"><a class="markdownIt-Anchor" href="#在封装中使用的关键字"></a> 在封装中使用的关键字</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">同一个类</th>
+<th style="text-align:center">同一个包</th>
+<th style="text-align:center">子类</th>
+<th style="text-align:center">其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>public</code></td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>protected</code></td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>default</code></td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>private</code></td>
+<td style="text-align:center">可以访问</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>一般在进行类的定义时使用 <code>private</code>关键字进行修饰,通过 <code>get set</code>方法对外界提供操作接口,从而达到封装的目的</p>
+<hr />
+<h3 id="多态"><a class="markdownIt-Anchor" href="#多态"></a> 多态</h3>
+<h4 id="父类引用指向子类对象是多态产生的经典概括指明了多态产生的条件"><a class="markdownIt-Anchor" href="#父类引用指向子类对象是多态产生的经典概括指明了多态产生的条件"></a> 父类引用指向子类对象是多态产生的经典概括,指明了多态产生的条件</h4>
+<p>首先需要存在继承关系,在子类中重写父类中的方法,在创建对象时 <code>new</code>的是子类的构造函数,从而使得当调用子类重写父类的方法时,产生多态现象</p>
+<hr />
+<h3 id="final关键字"><a class="markdownIt-Anchor" href="#final关键字"></a> <code>final</code>关键字</h3>
+<p><code>final</code>修饰 <code>变量 方法 类</code>三种情况下的不同作用</p>
+<ul>
+<li>修饰 <code>变量</code>的时候,变量将会变成常量,该变量不能够被修改</li>
+<li>如果实现了一个类不想要有子类继承可以使用<code>final</code>关键字修饰,那么子类就没法继承了.</li>
+<li>如果在一个类中某一个方法不想要有被子类重写也可以使用<code>final</code>关键字进行修饰,但是该方法依然能够在本类中进行重载</li>
+</ul>
 
             </div>
             <hr>
@@ -255,10 +365,30 @@
               <div class="post-metas mb-3">
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">Java面向对象基础</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
               
             </div>
 
@@ -544,7 +674,7 @@
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/10/02/hello-world/');
+          var target = decodeURI('/2020/10/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -638,7 +768,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hello World&nbsp;",
+        "面向对象基础&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
