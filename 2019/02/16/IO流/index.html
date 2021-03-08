@@ -1,0 +1,1199 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <link rel="icon" type="image/png" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lpliang">
+  <meta name="keywords" content="">
+  <title>IO流 - lpliang&#39;s space</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lpliang's space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-16 20:51" pubdate>
+        2019年2月16日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      43
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">IO流</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一io流的概述"><a class="markdownIt-Anchor" href="#一io流的概述"></a> 一，IO流的概述</h3>
+<h4 id="11-什么是io流"><a class="markdownIt-Anchor" href="#11-什么是io流"></a> 1.1 什么是IO流</h4>
+<blockquote>
+<p>我们把数据的传输，看成是一种数据的流动，按照指定的流向进行输出的输入和输出。以内存为基准。</p>
+</blockquote>
+<h4 id="12-io流的分类"><a class="markdownIt-Anchor" href="#12-io流的分类"></a> 1.2 IO流的分类</h4>
+<blockquote>
+<p>根据数据的流向划分：输入流 和 输出流</p>
+<p>​	输入流：把数据从其他设备上读取到内存中</p>
+<p>​	输出流：把数据从内存中写到其他设备上</p>
+<p>根据数据的类型划分：字节流 和 字符流</p>
+<p>​	字节流：以字节为单位，任何文件都可以使用字节流进行读写</p>
+<p>​	字符流：以字符为单位，一般只能对文本进行读写</p>
+</blockquote>
+<h4 id="13-io流的顶层父类"><a class="markdownIt-Anchor" href="#13-io流的顶层父类"></a> 1.3 IO流的顶层父类</h4>
+<blockquote>
+<p>字节输入流：InputStream</p>
+<p>字节输出流：OutputStream</p>
+<p>字符输入流：Reader</p>
+<p>字符输出流：Writer</p>
+<p>注：</p>
+<ol>
+<li>它们及其子类们都在 <a target="_blank" rel="noopener" href="http://java.io">java.io</a> 包中</li>
+<li>它们都是 抽象类</li>
+</ol>
+</blockquote>
+<h3 id="二fileoutputstream-文件字节输出流"><a class="markdownIt-Anchor" href="#二fileoutputstream-文件字节输出流"></a> 二，FileOutputStream 文件字节输出流</h3>
+<h4 id="21-概述"><a class="markdownIt-Anchor" href="#21-概述"></a> 2.1 概述</h4>
+<blockquote>
+<p>概述：该类是 OutputStream 的一个专门针对文件进行写出的流，它定义了一系列与写出相关的方法。</p>
+</blockquote>
+<h4 id="22-构造函数"><a class="markdownIt-Anchor" href="#22-构造函数"></a> 2.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new FileOutputStream(File f)：根据指定文件对象所指向的文件路径创建文件字节输出流对象</li>
+<li>new FileOutputStream(String name)：根据指定文件路径创建文件字节输出流对象</li>
+<li>new FileOutputStream(File f，boolean b)：功能同上，第二个参数值为 true 时，表示该文件可以续写</li>
+<li>new FileOutputStream(String name，boolean b)：功能同上，第二个参数值为 true 时，表示该文件可以续写</li>
+</ol>
+</blockquote>
+<h4 id="23-常用方法"><a class="markdownIt-Anchor" href="#23-常用方法"></a> 2.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>close()：释放资源，如果执行了 close() 方法，那么就不能在写入了</li>
+<li>flush()：刷新缓冲区</li>
+<li>write(int ch)：根据十进制数写入对应的字符</li>
+<li>writer(byte[] b)：写入指定的字节数组，如果要写入字符串，可以通过，字符串的 getBytes() 方法获取对应的字节数组</li>
+<li>writer(byte[] b，int index ，int lenth)：从字节数组中的指定位置获取指定数量的元素写入到文件中</li>
+</ol>
+<p>注：</p>
+<ol>
+<li>如果想要续写，需要使用带有 boolean 参数的构造函数来创建对象，并且布尔值必须是 true</li>
+<li>关于输出换行：
+<ol>
+<li>windows：\r\n</li>
+<li>unix：\n</li>
+<li>mac：\r</li>
+</ol>
+</li>
+<li>流用完后一定要关闭</li>
+</ol>
+</blockquote>
+<h3 id="三fileinputstream-文件字节输入流"><a class="markdownIt-Anchor" href="#三fileinputstream-文件字节输入流"></a> 三，FileInputStream 文件字节输入流</h3>
+<h4 id="31概述"><a class="markdownIt-Anchor" href="#31概述"></a> 3.1概述</h4>
+<blockquote>
+<p>概述：该类是 InputStream 的一个专门针对文件进行读取的流，它定义了一系列与读取相关的方法。</p>
+</blockquote>
+<h4 id="32-构造函数"><a class="markdownIt-Anchor" href="#32-构造函数"></a> 3.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new FileInputStream(File f)：根据指定文件对象所指向的文件路径创建文件字节输入流对象</li>
+<li>new FileInputStream(String name)：根据指定文件路径创建文件字节输入流对象</li>
+</ol>
+</blockquote>
+<h4 id="33-常用方法"><a class="markdownIt-Anchor" href="#33-常用方法"></a> 3.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>read()：读取单个字符所对应的十进制数，返回 -1 表示读完了</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;E:\\资料\\demo\\t1.txt&quot;</span>);
+<span class="hljs-keyword">int</span> ch = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>((ch = fis.read()) != -<span class="hljs-number">1</span>)&#123;
+    System.out.println((<span class="hljs-keyword">char</span>)ch);
+&#125;</code></pre></div>
+<ol start="2">
+<li>read(byte b[]，int a，int b)：从指定文件中的a位置开始，读取b个字符，存储到数组中</li>
+<li>read(byte b[])：从指定文件中读取还未获取到的字符，存储到数组中，返回读取到的有效个数</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();
+<span class="hljs-keyword">int</span> len = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>((len = fis.read(b)) != -<span class="hljs-number">1</span>)&#123;
+    sb.append(<span class="hljs-keyword">new</span> String(b,<span class="hljs-number">0</span>,len));
+&#125;
+System.out.println(sb);</code></pre></div>
+<ol start="4">
+<li>close()：释放资源</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>练习：将 D 盘中的图片，复制到 E 盘中</p>
+<div class="hljs"><pre><code class="hljs java">FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\a.png&quot;</span>);
+FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;E:\\b.png&quot;</span>);
+<span class="hljs-keyword">byte</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
+<span class="hljs-keyword">int</span> len = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>((len = fis.read(b)) != -<span class="hljs-number">1</span>)&#123;
+    fos.write(b,<span class="hljs-number">0</span>,len);
+&#125;
+fis.close();
+fos.close();</code></pre></div>
+<p>注：流关闭的原则是“先开后管”</p>
+</blockquote>
+<h3 id="四filereader-文件字符输入流"><a class="markdownIt-Anchor" href="#四filereader-文件字符输入流"></a> 四，FileReader 文件字符输入流</h3>
+<h4 id="41-概述"><a class="markdownIt-Anchor" href="#41-概述"></a> 4.1 概述</h4>
+<blockquote>
+<p>概述：该类是 Reader 的一个专门针对文件进行读取的流，它定义了一系列与读取相关的方法。</p>
+</blockquote>
+<h4 id="42-构造函数"><a class="markdownIt-Anchor" href="#42-构造函数"></a> 4.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new FileReader(File f)</li>
+<li>new FileReader(String name)</li>
+</ol>
+</blockquote>
+<h4 id="43-常用方法"><a class="markdownIt-Anchor" href="#43-常用方法"></a> 4.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>read()</li>
+<li>read(char ch[])</li>
+<li>read(char ch[] ，int index，int lenth)</li>
+<li>close()</li>
+</ol>
+</blockquote>
+<h3 id="五filewriter-文件字符输出流"><a class="markdownIt-Anchor" href="#五filewriter-文件字符输出流"></a> 五，FileWriter 文件字符输出流</h3>
+<h4 id="51-概念"><a class="markdownIt-Anchor" href="#51-概念"></a> 5.1 概念</h4>
+<blockquote>
+<p>概述：该类是 Writer 的一个专门针对文件进行写出的流，它定义了一系列与写出相关的方法。</p>
+</blockquote>
+<h4 id="52-构造函数"><a class="markdownIt-Anchor" href="#52-构造函数"></a> 5.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new FileWriter(File f)</li>
+<li>new FileWriter(String name)</li>
+<li>new FileWriter(File f，boolean b)</li>
+<li>new FileWriter(String name，boolean b)</li>
+</ol>
+</blockquote>
+<h4 id="53-常用方法"><a class="markdownIt-Anchor" href="#53-常用方法"></a> 5.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>close()：释放资源，执行释放动作前，会先将缓冲区中的数据刷新到的目标位置</li>
+<li>flush()：当使用 write() 方法写入文件时，只是把数据写入到了缓冲区中，需要用 flush() 才能将数据从缓冲区中真正的刷新到目标位置</li>
+<li>write(int ch)</li>
+<li>write(String str)</li>
+<li>write(String str，int index，int length)</li>
+<li>write(char[] ch)</li>
+<li>write(char[] ch，int index，int length)</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>close() 与 flush() 的区别：</p>
+<p>flush() ：只是将数据从缓冲区中刷新到目标位置，刷新后，该输出流仍能正常使用</p>
+<p>close()：会先将缓冲区中的数据刷新到的目标位置，再关闭资源，关闭后，该流不能再使用</p>
+</blockquote>
+<h3 id="六属性集-properties"><a class="markdownIt-Anchor" href="#六属性集-properties"></a> 六，属性集 Properties</h3>
+<h4 id="61-概念"><a class="markdownIt-Anchor" href="#61-概念"></a> 6.1 概念</h4>
+<blockquote>
+<p>概念：Properties 是 HashTable 的一个子类，它用来表示持久的属性集，它使用键值对的方式存储数据。</p>
+<p>注：</p>
+<ol>
+<li>Properties 一般用于读取配置文件</li>
+<li>Properties 中的键和值的数据类型都是字符串类型的</li>
+</ol>
+</blockquote>
+<h4 id="62-构造函数"><a class="markdownIt-Anchor" href="#62-构造函数"></a> 6.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new Properties()</li>
+</ol>
+</blockquote>
+<h4 id="63-常用方法"><a class="markdownIt-Anchor" href="#63-常用方法"></a> 6.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>setProperties(String key，String value)</li>
+<li>getProperties(String key)</li>
+<li>stringPropertyName()：返回当前 Properties 所有键组成的 Set 集合</li>
+</ol>
+</blockquote>
+<h4 id="64-properties-与流相关的操作"><a class="markdownIt-Anchor" href="#64-properties-与流相关的操作"></a> 6.4 Properties 与流相关的操作</h4>
+<blockquote>
+<p>方法：</p>
+<ol>
+<li>void  load(InputStream)：从字节输入流中读取键值对，使用 Properties 加载流对象</li>
+<li>void  load(Reader)：从字符输入流中读取键值对，使用 Properties 加载流对象</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// InputStream is = new FileInputStream(&quot;xxx&quot;); // 绝对路径</span>
+<span class="hljs-comment">// InputStream is = new FileInputStream(&quot;src\\jdbc.properties&quot;);</span>
+<span class="hljs-comment">// Reader is = new FileReader(&quot;E:\\workspace\\day26_02_流\\src\\jdbc.properties&quot;);</span>
+Reader is = <span class="hljs-keyword">new</span> FileReader(<span class="hljs-string">&quot;src\\jdbc.properties&quot;</span>);
+prop.load(is);
+System.out.println(prop.getProperty(<span class="hljs-string">&quot;username&quot;</span>));
+System.out.println(prop.getProperty(<span class="hljs-string">&quot;password&quot;</span>));</code></pre></div>
+<p>注：</p>
+<p>Properties 读取的文件中的内容一般都是配置文件，配置文件以键值对的形式出现，格式：key=value、key:value、key value。</p>
+</blockquote>
+<h3 id="七缓冲流"><a class="markdownIt-Anchor" href="#七缓冲流"></a> 七，缓冲流</h3>
+<h4 id="71-概念"><a class="markdownIt-Anchor" href="#71-概念"></a> 7.1 概念</h4>
+<blockquote>
+<p>概念：缓冲流，也称为高效流，它是对4个基本的 FileXxx 流的增强</p>
+<p>分类：</p>
+<ol>
+<li>字节缓冲流：BufferedInputStream 字节缓冲输入流，BufferedOutputStream 字节缓冲输出流</li>
+<li>字符缓冲流：BufferedReader 字符缓冲输入流，BufferedWriter 字符缓冲输出流</li>
+</ol>
+<p>缓冲流的原理：在创建流对象的同时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区的读写，减少IO操作的次数，从而提高读写效率。</p>
+</blockquote>
+<h4 id="72-构造函数"><a class="markdownIt-Anchor" href="#72-构造函数"></a> 7.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>BufferedReader br = new BufferedReader(Reader r)</li>
+<li>BufferedWriter bw = new BufferedWriter(Writer w)</li>
+<li>BufferedInputStream bis = new BufferedInputStream(InputStream is)</li>
+<li>BufferedOutputStream bos = new BufferedOutputStream(OutputStream os)</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>普通流和缓冲流的效率比较：</p>
+<div class="hljs"><pre><code class="hljs java">&gt;<span class="hljs-comment">// 文件字节输入输出流</span>
+&gt;<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;
+  FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;E:\\eclipse\\eclipse-jee-neon-R-win32-x86_64.zip&quot;</span>);
+  FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\片子\\e.zip&quot;</span>);
+  <span class="hljs-keyword">int</span> len = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">byte</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
+  <span class="hljs-keyword">while</span>((len = fis.read(b)) != -<span class="hljs-number">1</span>)&#123;
+      fos.write(b,<span class="hljs-number">0</span>,len);
+  &#125;
+  fos.close();
+  fis.close();
+&gt;&#125;
+
+&gt;<span class="hljs-comment">// 缓冲字节输入输出流</span>
+&gt;<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f2</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;
+  FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;E:\\eclipse\\eclipse-jee-neon-R-win32-x86_64.zip&quot;</span>);
+  BufferedInputStream bis = <span class="hljs-keyword">new</span> BufferedInputStream(fis);
+  FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\片子\\e.zip&quot;</span>);
+  BufferedOutputStream bos = <span class="hljs-keyword">new</span> BufferedOutputStream(fos);
+  <span class="hljs-keyword">int</span> len = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">byte</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
+  <span class="hljs-keyword">while</span>((len = bis.read(b)) != -<span class="hljs-number">1</span>)&#123;
+      bos.write(b,<span class="hljs-number">0</span>,len);
+  &#125;
+  bos.close();
+  fos.close();
+  bis.close();
+  fis.close();
+&gt;&#125;</code></pre></div>
+</blockquote>
+<h4 id="73-常用方法"><a class="markdownIt-Anchor" href="#73-常用方法"></a> 7.3 常用方法</h4>
+<blockquote>
+<p>缓冲流中的方法与普通流中的方法基本相同</p>
+<p>特有方法：</p>
+<ol>
+<li>BufferedReader 中的 readLine()：读取一整行</li>
+<li>BufferedWriter 中的 newLine()：表示换行，自动适配当前操作系统</li>
+</ol>
+</blockquote>
+<h4 id="74-练习"><a class="markdownIt-Anchor" href="#74-练习"></a> 7.4 练习</h4>
+<blockquote>
+<div class="hljs"><pre><code class="hljs angelscript"><span class="hljs-number">4.</span>低头思故乡。
+<span class="hljs-number">2.</span>疑似地上霜。
+<span class="hljs-number">1.</span>床前明月光，
+<span class="hljs-number">3.</span>举头望明月，
+<span class="hljs-comment">// 将其按照1234排序，输出到指定文件中</span></code></pre></div>
+<p>方法一：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test1</span> </span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;
+        <span class="hljs-comment">// 创建一个字符缓冲输入流，指向要排序的&quot;练习.txt&quot;</span>
+		BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\练习.txt&quot;</span>));
+        <span class="hljs-comment">// 创建一个字符缓冲输出流，指向排序后输出的位置&quot;show.txt&quot;</span>
+		BufferedWriter bw = <span class="hljs-keyword">new</span> BufferedWriter(<span class="hljs-keyword">new</span> FileWriter(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\show.txt&quot;</span>));
+        
+        <span class="hljs-comment">// 我们要通过每一条语句前的序号进行排序，并且排序时，每一天语句后的诗句要与序号同时进行排序</span>
+        <span class="hljs-comment">// Map中的键和值是一个整体，通过键就能获取值，可以对键进行排序，从而值也就排序了</span>
+		HashMap&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        
+		String str = <span class="hljs-keyword">null</span>;
+		<span class="hljs-keyword">while</span>((str = br.readLine()) != <span class="hljs-keyword">null</span>)&#123;
+            <span class="hljs-comment">// split是String类中的切割功能，这个方法的参数是一个字符串，表示以何种方式进行切割，切割后返回的结果是一个字符串数组</span>
+			String s[] = str.split(<span class="hljs-string">&quot;[.]&quot;</span>);
+			map.put(s[<span class="hljs-number">0</span>], s[<span class="hljs-number">1</span>]);
+		&#125;
+        
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i &lt;= map.size() ;i++)&#123;
+			String key = i + <span class="hljs-string">&quot;&quot;</span>;
+			String value = map.get(key);
+			String s = key + <span class="hljs-string">&quot;.&quot;</span> + value;
+			bw.write(s);
+			bw.newLine();
+		&#125;
+        
+		bw.close();
+		br.close();
+	&#125;
+&#125;</code></pre></div>
+<p>方法二：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test2</span> </span>&#123;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>&#123;
+		BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\练习.txt&quot;</span>));
+		BufferedWriter bw = <span class="hljs-keyword">new</span> BufferedWriter(<span class="hljs-keyword">new</span> FileWriter(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\show.txt&quot;</span>));
+		
+		ArrayList&lt;QueryVo&gt; vos = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+		String str = <span class="hljs-keyword">null</span>;
+		<span class="hljs-keyword">while</span>((str = br.readLine()) != <span class="hljs-keyword">null</span>)&#123;
+			String[] s = str.split(<span class="hljs-string">&quot;\\.&quot;</span>);
+			QueryVo vo = <span class="hljs-keyword">new</span> QueryVo();
+			vo.num = s[<span class="hljs-number">0</span>];
+			vo.msg = s[<span class="hljs-number">1</span>];
+			vos.add(vo);
+		&#125;
+		System.out.println(vos);
+		Collections.sort(vos);
+		System.out.println(vos);
+		
+		<span class="hljs-keyword">for</span> (QueryVo vo : vos) &#123;
+			String num = vo.num;
+			String msg = vo.msg;
+			String s = num + <span class="hljs-string">&quot;.&quot;</span>+msg;
+			bw.write(s);
+			bw.newLine();
+		&#125;
+		bw.close();
+		
+	&#125;
+	
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QueryVo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">QueryVo</span>&gt;</span>&#123;
+	
+	String num;
+	String msg;
+	
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(QueryVo o)</span> </span>&#123;
+<span class="hljs-comment">//		return this.num.compareTo(o.num);</span>
+		<span class="hljs-keyword">return</span> Integer.valueOf(<span class="hljs-keyword">this</span>.num) - Integer.valueOf(o.num);
+	&#125;
+
+&#125;</code></pre></div>
+</blockquote>
+<h3 id="八转换流"><a class="markdownIt-Anchor" href="#八转换流"></a> 八，转换流</h3>
+<h4 id="81-字符编码和字符集"><a class="markdownIt-Anchor" href="#81-字符编码和字符集"></a> 8.1 字符编码和字符集</h4>
+<blockquote>
+<p>字符编码：在屏幕上看到的任何字符在计算机底层都是以某种规则转换成二进制的形式出现的，这种转换方式就叫做编码；将计算机底层的二进制数以某种规则显示在屏幕上的这种转换方式就叫做解码。如果转换规则错误，或者转换的规则不匹配就会发生乱码。</p>
+<p>简单的说字符编码就是一套字符与二进制数转换的规则</p>
+<p>字符集：也叫做编码表，它是系统支持的所有字符的一个集合，包含各个国家文字、标点符号、图形符号。</p>
+<p>ASCII：它是基于拉丁字母的一套计算机编码系统，共有128个字符</p>
+<p>ISO8859-1：拉丁码表，不包含中文</p>
+<p>GB2312：GB是国标的意思，简体中文码表</p>
+<p>GBK：最常用的中文码表，是在GB2312上的扩展，windows 操作系统的默认编码格式就是GBK</p>
+<p>Unicode：万国码，满足跨语言、跨平台进行文本转换、处理的要求。</p>
+<p>UTF-8：它可以用来表示Unicode标准中的任何字符，它逐渐成为电子邮箱、网页及其他存储或传送文字的应用中，优先采用的编码。</p>
+</blockquote>
+<h4 id="22-inputstreamreader"><a class="markdownIt-Anchor" href="#22-inputstreamreader"></a> 2.2 InputStreamReader</h4>
+<h5 id="221-概述"><a class="markdownIt-Anchor" href="#221-概述"></a> 2.2.1 概述</h5>
+<blockquote>
+<p>概念：它是 Reader 的子类，它是从字节流转换到字符流的桥梁，它读取字节，并使用指定的字符集将其转换成字符。</p>
+</blockquote>
+<h5 id="222-构造函数"><a class="markdownIt-Anchor" href="#222-构造函数"></a> 2.2.2 构造函数</h5>
+<blockquote>
+<ol>
+<li>new InputStreamReader(InputStream in)</li>
+<li>new InputStreamReader(InputStream in，String charset)</li>
+</ol>
+</blockquote>
+<h4 id="23-outputstreamwriter"><a class="markdownIt-Anchor" href="#23-outputstreamwriter"></a> 2.3 OutputStreamWriter</h4>
+<h5 id="231-概述"><a class="markdownIt-Anchor" href="#231-概述"></a> 2.3.1 概述</h5>
+<blockquote>
+<p>概述：它是 Writer 的子类，它的从字符流转换到字节流的桥梁，它读取字符，并使用指定的字符集将字符转换成字节。</p>
+</blockquote>
+<h5 id="232-构造函数"><a class="markdownIt-Anchor" href="#232-构造函数"></a> 2.3.2 构造函数</h5>
+<blockquote>
+<ol>
+<li>new OutputStreamWriter(OutputStream os)</li>
+<li>new OutputStreamWriter(OutputStream os，String charset)</li>
+</ol>
+</blockquote>
+<h4 id="24-代码"><a class="markdownIt-Anchor" href="#24-代码"></a> 2.4 代码</h4>
+<blockquote>
+<div class="hljs"><pre><code class="hljs java">&gt;FileInputStream fis = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\test.txt&quot;</span>);
+&gt;InputStreamReader isr = <span class="hljs-keyword">new</span> InputStreamReader(fis,<span class="hljs-string">&quot;utf-8&quot;</span>);
+&gt;<span class="hljs-keyword">int</span> ch = <span class="hljs-number">0</span>;
+&gt;<span class="hljs-keyword">while</span>((ch = isr.read()) != -<span class="hljs-number">1</span>)&#123;
+   System.out.println((<span class="hljs-keyword">char</span>)ch);
+&gt;&#125;
+&gt;isr.close();
+
+&gt;System.out.println(<span class="hljs-string">&quot;------------------------------&quot;</span>);
+
+&gt;FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\demo.txt&quot;</span>);
+&gt;OutputStreamWriter osw = <span class="hljs-keyword">new</span> OutputStreamWriter(fos, <span class="hljs-string">&quot;utf-8&quot;</span>);
+&gt;osw.write(<span class="hljs-string">&quot;你好&quot;</span>);
+&gt;osw.close();</code></pre></div>
+<p>注：字符集的选用根据读写的目标文件决定</p>
+</blockquote>
+<h3 id="九对象流-序列化流"><a class="markdownIt-Anchor" href="#九对象流-序列化流"></a> 九，对象流 （序列化流）</h3>
+<h4 id="91-序列化"><a class="markdownIt-Anchor" href="#91-序列化"></a> 9.1 序列化</h4>
+<blockquote>
+<p>Java 中提供了一种对象的序列化机制，允许将一个对象及其属性持久化的存储到文件中。</p>
+<p>序列化：将对象存储到文件中</p>
+<p>反序列化，将文件中的对象解析出来</p>
+</blockquote>
+<h4 id="92-objectoutputstream"><a class="markdownIt-Anchor" href="#92-objectoutputstream"></a> 9.2 ObjectOutputStream</h4>
+<blockquote>
+<p>构造方法：new ObjectOutputStream(OutputStream out)</p>
+<p>注：</p>
+<ol>
+<li>一个类中的对象要想序列化，该类必须实现 Serializable 接口，这个接口是一个标记接口，不实现此接口的类不能序列化和反序列化，会发生 NotSerializableException。</li>
+<li>如果不想让某个属性被序列化，可以使用 transient 瞬态关键字修饰。</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">Person p = <span class="hljs-keyword">new</span> Person();
+p.name = <span class="hljs-string">&quot;乔碧萝&quot;</span>;
+p.age = <span class="hljs-number">25</span>;
+p.sex = <span class="hljs-string">&quot;男&quot;</span>;
+
+ObjectOutputStream oos = <span class="hljs-keyword">new</span> ObjectOutputStream(<span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\demo.txt&quot;</span>));
+oos.writeObject(p); <span class="hljs-comment">// 写入对象的核心方法</span>
+oos.close();</code></pre></div>
+</blockquote>
+<h4 id="92-objectinputstream"><a class="markdownIt-Anchor" href="#92-objectinputstream"></a> 9.2 ObjectInputStream</h4>
+<blockquote>
+<p>构造方法：new ObjectInputStream(InputStream out)</p>
+<div class="hljs"><pre><code class="hljs java">ObjectInputStream ois = <span class="hljs-keyword">new</span> ObjectInputStream(<span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;C:\\Users\\qianfeng\\Desktop\\demo.txt&quot;</span>));
+Person pp = (Person)ois.readObject(); <span class="hljs-comment">// 读取对象的核心方法</span>
+System.out.println(pp.name);
+System.out.println(pp.age);
+System.out.println(pp.sex);</code></pre></div>
+<p>注：如果读取对象的次数超过了对象的个数，会发生 EOFException</p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">网络编程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/15/%E6%96%87%E4%BB%B6/">
+                        <span class="hidden-mobile">文件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/pllee1121" target="_blank" rel="nofollow noopener">
+        <span>Github</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2019/02/16/IO%E6%B5%81/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz'
+    var app_key = 'sNxHutMd7lXakXdx7yzpfpqY'
+    var server_url = 'https://h3koiw2p.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "IO流&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'pllee', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127032508-1"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-127032508-1');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

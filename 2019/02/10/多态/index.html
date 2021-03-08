@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>面向对象基础 - lpliang&#39;s space</title>
+  <title>多态 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -165,8 +165,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-12 21:22" pubdate>
-        2020年10月12日 晚上
+      <time datetime="2019-02-10 23:47" pubdate>
+        2019年2月10日 晚上
       </time>
     </span>
   
@@ -177,7 +177,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      636 字
+      904 字
     </span>
   
 
@@ -187,7 +187,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      9
        分钟
     </span>
   
@@ -225,154 +225,96 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">面向对象基础</h1>
+            <h1 style="display: none">多态</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年10月12日 晚上
+                  本文最后更新于：2021年3月8日 晚上
                 
               </p>
             
             <div class="markdown-body" id="post-body">
-              <h3 id="继承"><a class="markdownIt-Anchor" href="#继承"></a> 继承</h3>
-<p>在 <code>Java</code>中继承使用 <code>extends</code>关键字,不像C++中存在多继承只存在单继承即子类只能有一个直接父类.</p>
-<h4 id="继承的优点"><a class="markdownIt-Anchor" href="#继承的优点"></a> 继承的优点</h4>
+              <h3 id="一多态的概念"><a class="markdownIt-Anchor" href="#一多态的概念"></a> 一，多态的概念</h3>
 <blockquote>
-<p>继承可以降低代码冗余度,可以把多个类中共同的代码抽象出来,减少相同代码的重复编写</p>
+<p>面向对象的三大特性：封装、继承、多态</p>
+<p>多态的前提是继承关系或者实现关系</p>
+<p>生活中的多态：不同人物角色在不同的场景下具有不同的身份</p>
+<p>程序中的多态：“一个子类就是一个父类”，父类的引用变量指向子类对象，从而形成多态。</p>
+<p>写法：</p>
+<div class="hljs"><pre><code class="hljs java">&gt;<span class="hljs-comment">// 例如：Stdeunt继承了Human</span>
+&gt;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Human</span></span>&#123;
+
+&gt;&#125;
+&gt;Human h = <span class="hljs-keyword">new</span> Student();
+&gt;<span class="hljs-comment">// 父类 变量名 = new 子类();</span></code></pre></div>
+<div class="hljs"><pre><code class="hljs java">&gt;<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Net</span></span>&#123;
+
+&gt;&#125;
+&gt;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Phone</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Net</span></span>&#123;
+
+&gt;&#125;
+&gt;Net n = <span class="hljs-keyword">new</span> Phone;
+&gt;<span class="hljs-comment">// 接口 变量名 = new 实现类();</span></code></pre></div>
 </blockquote>
-<p>在 <code>Java</code>中子类继承父类除 <code>构造方法</code>外的所有属性<br />
-<code>instanceof</code>关键字的使用规则 <code>对象 instanceof 类名</code>判断对象是否时某个类的对象, <code>Object</code>类是所有类的父类,因此在使用 <code>instanceof</code>判断的时候返回值都是 <code>true</code></p>
-<p>父类Person类</p>
-<div class="hljs"><pre><code class="hljs java">
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;
-
-    <span class="hljs-keyword">private</span> String name;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sleep</span><span class="hljs-params">()</span> </span>&#123;
-        System.out.println(<span class="hljs-string">&quot;睡觉&quot;</span>);
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>&#123;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span> </span>&#123;
-        <span class="hljs-keyword">this</span>.name = name;
-        <span class="hljs-keyword">this</span>.age = age;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;
-        <span class="hljs-keyword">return</span> name;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>&#123;
-        <span class="hljs-keyword">this</span>.name = name;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>&#123;
-        <span class="hljs-keyword">return</span> age;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>&#123;
-        <span class="hljs-keyword">this</span>.age = age;
-    &#125;
-
-&#125;</code></pre></div>
-<p>Student子类继承Person类</p>
-<div class="hljs"><pre><code class="hljs java">
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span> </span>&#123;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
-        Student student = <span class="hljs-keyword">new</span> Student();
-        student.setId(<span class="hljs-number">1234</span>);
-        student.sleep();
-        System.out.println(student.id);
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>&#123;
-        <span class="hljs-keyword">return</span> id;
-    &#125;
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span> </span>&#123;
-        <span class="hljs-keyword">this</span>.id = id;
-    &#125;
-
-&#125;</code></pre></div>
-<div class="hljs"><pre><code class="hljs 运行结果">睡觉
-1234
-true</code></pre></div>
-<hr />
-<h3 id="封装"><a class="markdownIt-Anchor" href="#封装"></a> 封装</h3>
-<h4 id="在封装中使用的关键字"><a class="markdownIt-Anchor" href="#在封装中使用的关键字"></a> 在封装中使用的关键字</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">修饰符</th>
-<th style="text-align:center">同一个类</th>
-<th style="text-align:center">同一个包</th>
-<th style="text-align:center">子类</th>
-<th style="text-align:center">其他包</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>public</code></td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>protected</code></td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>default</code></td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>private</code></td>
-<td style="text-align:center">可以访问</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<p>一般在进行类的定义时使用 <code>private</code>关键字进行修饰,通过 <code>get set</code>方法对外界提供操作接口,从而达到封装的目的</p>
-<hr />
-<h3 id="多态"><a class="markdownIt-Anchor" href="#多态"></a> 多态</h3>
-<h4 id="父类引用指向子类对象是多态产生的经典概括指明了多态产生的条件"><a class="markdownIt-Anchor" href="#父类引用指向子类对象是多态产生的经典概括指明了多态产生的条件"></a> 父类引用指向子类对象是多态产生的经典概括,指明了多态产生的条件</h4>
-<p>首先需要存在继承关系,在子类中重写父类中的方法,在创建对象时 <code>new</code>的是子类的构造函数,从而使得当调用子类重写父类的方法时,产生多态现象</p>
-<hr />
-<h3 id="final关键字"><a class="markdownIt-Anchor" href="#final关键字"></a> <code>final</code>关键字</h3>
-<p><code>final</code>修饰 <code>变量 方法 类</code>三种情况下的不同作用</p>
-<ul>
-<li>修饰 <code>变量</code>的时候,变量将会变成常量,该变量不能够被修改</li>
-<li>如果实现了一个类不想要有子类继承可以使用<code>final</code>关键字修饰,那么子类就没法继承了.</li>
-<li>如果在一个类中某一个方法不想要有被子类重写也可以使用<code>final</code>关键字进行修饰,但是该方法依然能够在本类中进行重载</li>
-</ul>
+<h3 id="二多态下成员的特点"><a class="markdownIt-Anchor" href="#二多态下成员的特点"></a> 二，多态下成员的特点</h3>
+<h4 id="21-成员变量的特点"><a class="markdownIt-Anchor" href="#21-成员变量的特点"></a> 2.1 成员变量的特点</h4>
+<blockquote>
+<p>编译时期：父类中没有这个变量，编译失败；父类中有这个变量，编译通过。</p>
+<p>运行时期：访问的是父类中的成员变量</p>
+<p>小结：编译运行都看左边。</p>
+<p>注：多态的情况下，不能访问子类的特有属性</p>
+</blockquote>
+<h4 id="22-成员方法的特点"><a class="markdownIt-Anchor" href="#22-成员方法的特点"></a> 2.2 成员方法的特点</h4>
+<blockquote>
+<p>编译时期：父类中没有这个方法，编译失败；父类中有这个方法，编译通过。</p>
+<p>运行时期：调用的是子类中的成员方法</p>
+<p>小结：编译看左边，运行看右边。</p>
+<p>注：多态的情况下，不能访问子类的特有方法</p>
+</blockquote>
+<h3 id="三多态的应用"><a class="markdownIt-Anchor" href="#三多态的应用"></a> 三，多态的应用</h3>
+<blockquote>
+<p>适用场景1：使用父类作为方法的形参，使方法的实参更加灵活，因为此时方法的实参可以是该父类的任何一个子类。</p>
+<p>适用场景2：适用父类作为方法的返回类型，使方法的返回更加灵活，因为此时方法的返回类型可以是该父类的任何一个子类。</p>
+<p>适用场景3：当使用匿名内部类的方式来创建抽象类的子类对象或者接口的实现类对象时，可以使用抽象类或者接口的引用变量来接收这个匿名对象，此时这个匿名对象有了引用变量名后就可以通过该变量反复调用匿名内部类中的成员。</p>
+</blockquote>
+<h3 id="四多态的转型问题"><a class="markdownIt-Anchor" href="#四多态的转型问题"></a> 四，多态的转型问题</h3>
+<h4 id="41-向上转型"><a class="markdownIt-Anchor" href="#41-向上转型"></a> 4.1 向上转型</h4>
+<blockquote>
+<p>多态的本质就是向上转型，父类的引用变量指向子类对象</p>
+<p>注：向上转型是不会发生异常的，一定是安全的</p>
+<p>多态也就是向上转型后的弊端是无法访问子类的特有内容</p>
+</blockquote>
+<h4 id="42-向下转型"><a class="markdownIt-Anchor" href="#42-向下转型"></a> 4.2 向下转型</h4>
+<blockquote>
+<p>多态的情况下，无法访问子类的特有内容，需要向下转型</p>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java">子类 变量名 = (子类/实现类)父类/接口引用变量;</code></pre></div>
+<div class="hljs"><pre><code class="hljs java">Human h = <span class="hljs-keyword">new</span> Teacher();
+Teacher t = (Teacher)h;
+t.teach();<span class="hljs-comment">// 特有方法</span>
+System.out.println(t.age);<span class="hljs-comment">// 特有属性</span></code></pre></div>
+</blockquote>
+<blockquote>
+<p>注：在进行向下转型的过程中，如果强转的目标类型不是多态时指定的类型会发生</p>
+<p>类型转换异常(ClassCastException)</p>
+<p>避免类型转换异常需要使用关键字 instanceof</p>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java">对象 <span class="hljs-keyword">instanceof</span> 类型</code></pre></div>
+<p>作用：判断对象是否是根据指定类型创建的；判断对象是否可以通过指定的类型来创建。返回布尔值。</p>
+<p>instanceof 的细节：</p>
+<ol>
+<li>没有多态使用 instanceof 是没有意义的</li>
+<li>在没有多态的情况下使用 instanceof 连接一个除自己和父类以外的任何类都会编译失败</li>
+<li>在多态下，instanceof 后连接的是父类名是没有意义的，因为结果永远为真</li>
+<li>在多态下，instanceof 后连接的当前继承体系之外的任何类时都会编译失败</li>
+</ol>
+</blockquote>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">Java面向对象基础</a>
-                    
-                  </div>
                 
               </div>
               
@@ -383,9 +325,21 @@ true</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2019/02/11/%E5%86%85%E9%83%A8%E7%B1%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">内部类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2019/02/10/%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                        <span class="hidden-mobile">抽象类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -674,7 +628,7 @@ true</code></pre></div>
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/10/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/');
+          var target = decodeURI('/2019/02/10/%E5%A4%9A%E6%80%81/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -768,7 +722,7 @@ true</code></pre></div>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "面向对象基础&nbsp;",
+        "多态&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,

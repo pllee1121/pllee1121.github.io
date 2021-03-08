@@ -17,10 +17,23 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>标签 - Java - lpliang&#39;s space</title>
+  <title>抽象类 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +56,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,6 +160,51 @@
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-10 23:46" pubdate>
+        2019年2月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      550 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -157,37 +215,196 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">面向对象基础</span>
-      <time style="float: right;">02-08</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">抽象类</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一抽象方法和抽象类的概念"><a class="markdownIt-Anchor" href="#一抽象方法和抽象类的概念"></a> 一，抽象方法和抽象类的概念</h3>
+<blockquote>
+<p>概念：当子类的共性方法抽取到父类中，而父类无法描述每个子类的具体行为时，就应该将这个方法定义成抽象方法。</p>
+<p>关键字：abstract</p>
+<p>抽象方法的定义格式：</p>
+<div class="hljs"><pre><code class="hljs java">范围修饰符 <span class="hljs-keyword">abstract</span> 返回类型 方法名(参数);</code></pre></div>
+<p>抽象方法必须在抽象类中，所以必须将抽象方法所在的类定义成抽象类。</p>
+</blockquote>
+<h3 id="二抽象类和抽象方法的使用"><a class="markdownIt-Anchor" href="#二抽象类和抽象方法的使用"></a> 二，抽象类和抽象方法的使用</h3>
+<blockquote>
+<p>抽象类一定是一个父类，因为抽象类是向上抽象形成的。</p>
+<p>那么子类中也就存在了从父类中继承下来的抽象方法。</p>
+<p>此时子类要么也是一个抽象类，要么重写父类中的所有抽象方法。</p>
+<p>（子类如果不重写父类中的所有抽象方法，那么这个子类也是一个抽象类）</p>
+<p>抽象类的使用步骤：</p>
+<ol>
+<li>创建子类继承抽象类</li>
+<li>重写所有抽象方法</li>
+<li>创建子类对象调用方法</li>
+</ol>
+</blockquote>
+<h3 id="三注意事项"><a class="markdownIt-Anchor" href="#三注意事项"></a> 三，注意事项</h3>
+<blockquote>
+<ol>
+<li>
+<p>抽象类不能创建对象（不能实例化，不能new）</p>
+<p>原因：如果创建了抽象类的对象，就可以调用抽象的方法，而调用抽象方法没有意义。</p>
+</li>
+<li>
+<p>抽象类中可以有非抽象方法，为子类提供共性方法</p>
+</li>
+<li>
+<p>抽象类中可以有构造函数</p>
+</li>
+<li>
+<p>抽象类一定是一个父类</p>
+</li>
+<li>
+<p>抽象类中可以没有抽象方法</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="四匿名对象"><a class="markdownIt-Anchor" href="#四匿名对象"></a> 四，匿名对象</h3>
+<blockquote>
+<p>概念：创建对象不指定对象的引用变量名</p>
+<p>好处：书写简便</p>
+<p>弊端：</p>
+<ol>
+<li>可读性差</li>
+<li>只能使用一次</li>
+</ol>
+</blockquote>
+<h3 id="五匿名内部类"><a class="markdownIt-Anchor" href="#五匿名内部类"></a> 五，匿名内部类</h3>
+<blockquote>
+<p>概念：使用匿名的方式创建一个抽象类的子类对象</p>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">new</span> 抽象类()&#123;
+	重写方法
+&#125;;</code></pre></div>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span><span class="hljs-params">()</span></span>;
+&#125;
 
+<span class="hljs-comment">// 创建匿名内部类</span>
+<span class="hljs-keyword">new</span> Animal()&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span><span class="hljs-params">()</span></span>&#123;
+		<span class="hljs-comment">//...</span>
+	&#125;
+&#125;;</code></pre></div>
+<p>注：</p>
+<ol>
+<li>匿名内部类中不能写构造函数，因为没有类名</li>
+<li>普通类也可以有匿名内部类，但是不推荐</li>
+<li>匿名内部类创建出的对象可以通过多态使用父类的引用变量接收（后面讲）</li>
+</ol>
+</blockquote>
 
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/10/%E5%A4%9A%E6%80%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">多态</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/09/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
+                        <span class="hidden-mobile">修饰符</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -409,10 +626,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/tags/Java/index.html');
+          var target = decodeURI('/2019/02/10/%E6%8A%BD%E8%B1%A1%E7%B1%BB/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -474,6 +691,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -481,7 +723,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - Java&nbsp;",
+        "抽象类&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
@@ -496,6 +738,23 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -509,6 +768,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 

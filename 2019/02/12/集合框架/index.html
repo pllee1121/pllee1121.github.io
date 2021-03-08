@@ -1,0 +1,1224 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <link rel="icon" type="image/png" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lpliang">
+  <meta name="keywords" content="">
+  <title>集合框架 - lpliang&#39;s space</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lpliang's space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-12 20:49" pubdate>
+        2019年2月12日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      44
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">集合框架</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一集合的概述"><a class="markdownIt-Anchor" href="#一集合的概述"></a> 一，集合的概述</h3>
+<blockquote>
+<p>概念：集合是一种用于存储数据的容器</p>
+<p>特点：</p>
+<ol>
+<li>集合的长度是可变的</li>
+<li>集合中存储的数据类型是任意的</li>
+<li>集合不能存储基本数据类型，要存储对应的包装类</li>
+<li>同一个集合中可以存储不同类型的数据</li>
+<li>在定义集合时，要明确集合的泛型，泛型：集合中可以存储的指定类型</li>
+</ol>
+</blockquote>
+<h3 id="二集合的体系结构"><a class="markdownIt-Anchor" href="#二集合的体系结构"></a> 二，集合的体系结构</h3>
+<blockquote>
+<p>Collection接口是整个集合体系中的根接口</p>
+<p>​	它定义了集合的共性方法</p>
+<ol>
+<li>add()</li>
+<li>addAll()</li>
+<li>remove()</li>
+<li>removeAll()</li>
+<li>isEmpty()</li>
+<li>size()</li>
+<li>clear()</li>
+<li>contains()</li>
+<li>containsAll()</li>
+</ol>
+<p>Collection 的子接口</p>
+<ol>
+<li>List 接口
+<ol>
+<li>有序的（存储顺序与访问顺序一致）</li>
+<li>可以重复</li>
+<li>常见的实现类：ArrayList、LinkedList、Vector</li>
+</ol>
+</li>
+<li>Set 接口
+<ol>
+<li>有些 Set 有序，有些 Set 无序（无序：访问顺序不能保证与存储顺序一致）</li>
+<li>不可重复</li>
+<li>常用的实现类：HashSet、LinkedHashSet、TreeSet</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h3 id="三arraylist-集合"><a class="markdownIt-Anchor" href="#三arraylist-集合"></a> 三，ArrayList 集合</h3>
+<h4 id="31-概念"><a class="markdownIt-Anchor" href="#31-概念"></a> 3.1 概念</h4>
+<blockquote>
+<p>概念：ArrayList 集合是 List 接口的一个实现类，它的存储结构是数组结构，是日常开发中使用频率最高的一种 List 集合。ArrayList 的特点是查询快，增删慢。</p>
+</blockquote>
+<h4 id="32-构造函数"><a class="markdownIt-Anchor" href="#32-构造函数"></a> 3.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new ArrayList()：构造一个初始容量为 10 的空列表。</li>
+<li>new ArrayList(int capacity)：构造一个具有指定初始容量的空列表。</li>
+</ol>
+</blockquote>
+<h4 id="33-常用方法"><a class="markdownIt-Anchor" href="#33-常用方法"></a> 3.3 常用方法</h4>
+<blockquote>
+<ol>
+<li>add(E e)：将元素添加到集合的末尾，返回布尔值；如果是 List 的 add() 返回值一定是 true，如果是 Set 的add() ，当元素已存在时会返回 false</li>
+<li>add(int index,  E e)：将元素添加集合中的指定位置，返回 void</li>
+<li>remove(E e)：从集合中移除指定对象，返回是否移除成功的布尔值</li>
+<li>remove(int index)：从集合中移除指定位置上的对象，返回被移除的对象</li>
+<li>set(int index, E e)：用指定元素替换集合中指定位置上的元素</li>
+<li>get(int index)：通过下标返回元素</li>
+<li>size()：返回集合的大小</li>
+<li>addAll(Collecrtion c)</li>
+<li>addAll(int index, Collection c)</li>
+<li>containsAll(Collection c)：判断参数集合中的所有元素是否都存在于调用者集合中</li>
+<li>a . retainAll( b )：将 a、b两个集合的交集替换掉 a 集合中的所有元素，返回 true 表示 a 集合发生了改变</li>
+<li>a . removeAll( b )：从 a 集合中移除 a、b 集合的交集，返回 true 表示 a 集合发生了改变</li>
+<li>clear()</li>
+<li>contains(E e)</li>
+<li>indexOf(Object o)</li>
+<li>lastIndexOf(Object o)</li>
+<li>isEmpty()</li>
+</ol>
+</blockquote>
+<h4 id="33-遍历方式"><a class="markdownIt-Anchor" href="#33-遍历方式"></a> 3.3 遍历方式</h4>
+<blockquote>
+<ol>
+<li>普通 for 循环</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt;= list.size() - <span class="hljs-number">1</span>;i++)&#123;
+    System.out.println(i + <span class="hljs-string">&quot;==&quot;</span> +list.get(i));
+&#125;</code></pre></div>
+<ol start="2">
+<li>增强 for 循环</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(String s : list)&#123;
+    System.out.println(s);
+&#125;</code></pre></div>
+</blockquote>
+<h3 id="四linkedlist-集合"><a class="markdownIt-Anchor" href="#四linkedlist-集合"></a> 四，LinkedList 集合</h3>
+<h4 id="41-概念"><a class="markdownIt-Anchor" href="#41-概念"></a> 4.1 概念</h4>
+<blockquote>
+<p>概念：LinkedList 集合是 List 接口的一个实现类，它的存储结构是链表结构，LinkedList 的特点是增删快，查询慢。</p>
+</blockquote>
+<h4 id="42-构造函数"><a class="markdownIt-Anchor" href="#42-构造函数"></a> 4.2 构造函数</h4>
+<blockquote>
+<ol>
+<li>new LinkedList()：构造一个空列表</li>
+</ol>
+</blockquote>
+<h4 id="43-方法"><a class="markdownIt-Anchor" href="#43-方法"></a> 4.3 方法</h4>
+<blockquote>
+<p>注：在 ArrayList 中所具备的方法，在 LinkedList 中都有，如果想要调用 LinkedList 中的特有方法，不可以使用多态的形式创建 LinkedList 对象。</p>
+<p>LinkedList 的特有方法：</p>
+<ol>
+<li>addFirst(E e)</li>
+<li>addLast(E e)</li>
+<li>remove()</li>
+<li>removeFirst()</li>
+<li>removeLast()</li>
+<li>peek()</li>
+<li>peekFirst()</li>
+<li>peekLast()</li>
+<li>pop()</li>
+<li>poll()</li>
+<li>push(E e)</li>
+</ol>
+</blockquote>
+<h3 id="五arraylist-和-linkedlist-的区别"><a class="markdownIt-Anchor" href="#五arraylist-和-linkedlist-的区别"></a> 五，ArrayList 和 LinkedList 的区别</h3>
+<blockquote>
+<p>ArrayList 底层是数组结构的，查询快、增删慢</p>
+<p>LinkedList 底层是链表结构的，增删快、查询慢</p>
+</blockquote>
+<h3 id="六-list-的嵌套"><a class="markdownIt-Anchor" href="#六-list-的嵌套"></a> 六， List 的嵌套</h3>
+<blockquote>
+<p>定义格式：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 以 ArrayList 为例</span>
+ArrayList&lt;ArrayList&lt;String&gt;&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();</code></pre></div>
+<p>遍历方式：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 以 ArrayList 为例</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt;= list.size() - <span class="hljs-number">1</span> ; i++)&#123;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span> ; j &lt;= list.get(i).size() - <span class="hljs-number">1</span> ; j++)&#123;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">for</span>(ArrayList&lt;String&gt; l : list)&#123;
+    <span class="hljs-keyword">for</span>(String s : l)&#123;
+    &#125;
+&#125;</code></pre></div>
+</blockquote>
+<h3 id="七-集合工具类-colletions"><a class="markdownIt-Anchor" href="#七-集合工具类-colletions"></a> 七， 集合工具类 Colletions</h3>
+<blockquote>
+<p>注：Collections 中的方法都是静态方法</p>
+<ol>
+<li>sort(List l)</li>
+<li>shuffle(List l)</li>
+<li>replaceAll(List l , oldValue, newValue)</li>
+<li>reverse(List l)</li>
+<li>max(List l)</li>
+<li>min(List l)</li>
+<li>swap(List l, int index1, int index2)</li>
+<li>copy(List newList ,  List oldList)</li>
+<li>fill(List l ,  E e)</li>
+<li>addAll(Collection c, E … e)</li>
+</ol>
+</blockquote>
+<h3 id="八-vector"><a class="markdownIt-Anchor" href="#八-vector"></a> 八， Vector</h3>
+<blockquote>
+<p>概念：Vector 是 List 的一个实现类，它的 API 大致与 ArrayList 一致，区别是 Vector 是同步的，保证线程安全。</p>
+</blockquote>
+<h3 id="九set-集合"><a class="markdownIt-Anchor" href="#九set-集合"></a> 九，Set 集合</h3>
+<blockquote>
+<p>概念：Set 集合是 Collection 接口一个子接口</p>
+<p>特点：</p>
+<ol>
+<li>不允许有重复元素</li>
+<li>没有下标，没有使用下标作为参数的相关方法，因此 Set 集合不能使用普通 for 循环进行遍历</li>
+</ol>
+</blockquote>
+<h3 id="十-hashset-集合"><a class="markdownIt-Anchor" href="#十-hashset-集合"></a> 十， HashSet 集合</h3>
+<blockquote>
+<p>概念：HashSet 集合是 Set 集合的一个实现类</p>
+<p>特点：</p>
+<ol>
+<li>不允许有重复元素</li>
+<li>没有下标，没有使用下标作为参数的相关方法，因此 Set 集合不能使用普通 for 循环进行遍历</li>
+<li>它是一个无序的集合，存取顺序不能保证一致</li>
+<li>底层结构是哈希表，哈希结构的特点是查询速度快
+<ol>
+<li>jdk 1.8 之前，哈希表 = 数组 + 链表</li>
+<li>jdk 1.8 及之后，哈希表 = 数组 + 链表（当链表的长度超过8个，会将链表结构转换成红黑树）</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>哈希值：是一个十进制数，由系统随机给出的一个值，它是根据地址模拟出来的一个值。</p>
+<p>在 Object 类有一个 hashCode() 方法可以获取对象的哈希值。</p>
+<p>hashCode()源码：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span></span>;</code></pre></div>
+<p>native：表示这个方法调用的是本地操作系统的方法</p>
+</blockquote>
+<blockquote>
+<p>HashSet 的存储原理：</p>
+<p>向 HashSet 存储对象时，先判断集合中是否存在与该对象相同的 哈希值 ，如果没有，那么直接存储；如果集合中已经存在某些对象的 哈希值 与要添加对象的 哈希值 相同，那么会继续调用对象的 equals() 方法，如果返回为 true，则不存储，为 false，则存储。</p>
+<p>如何使用 HashSet 在存储自定义数据类型时，保证对象唯一</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> prime = <span class="hljs-number">31</span>;
+    <span class="hljs-keyword">int</span> result = <span class="hljs-number">1</span>;
+    result = prime * result + age;
+    result = prime * result + ((name == <span class="hljs-keyword">null</span>) ? <span class="hljs-number">0</span> : name.hashCode());
+    <span class="hljs-keyword">return</span> result;
+&#125;
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span> </span>&#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> == obj)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    <span class="hljs-keyword">if</span> (obj == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">if</span> (getClass() != obj.getClass())
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    Person other = (Person) obj;
+    <span class="hljs-keyword">if</span> (age != other.age)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">if</span> (name == <span class="hljs-keyword">null</span>) &#123;
+        <span class="hljs-keyword">if</span> (other.name != <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!name.equals(other.name))
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+&#125;</code></pre></div>
+</blockquote>
+<h3 id="十一-自定义类的排序"><a class="markdownIt-Anchor" href="#十一-自定义类的排序"></a> 十一， 自定义类的排序</h3>
+<blockquote>
+<p>如果想要将集合中自定义类的对象进行升降序的排列，可以通过两种方法实现：</p>
+<ol>
+<li>
+<p>实现 Comparable 接口</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>实现 Comparable 接口</p>
+<ol start="2">
+<li>重写 public int compareTo (T t) 方法</li>
+<li>根据升降序的要求返回属性值的差值，降序：参数对象的属性 - 调用者的属性；升序：调用者的属性 - 参数对象的属性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>调用 sort() 方法传入 Comparator 接口的实现类对象</p>
+<p>步骤：</p>
+<ol>
+<li>调用 sort(List l, Comparator  c) 方法，在第一个参数中传入要比较的集合</li>
+<li>创建 Comparator  接口的实现类对象，并重写 int compare(T t1, T t2)；</li>
+<li>根据升降序的要求返回属性值的差值，降序：t2 的属性 - t1 的属性；升序：t1 的属性 - t2 的属性</li>
+</ol>
+</li>
+</ol>
+<p>注：数组中存储自定义数据类型也可以使用上述方法进行属性值的排序</p>
+</blockquote>
+<h3 id="十二迭代器"><a class="markdownIt-Anchor" href="#十二迭代器"></a> 十二，迭代器</h3>
+<blockquote>
+<p>概念：迭代器是 Collection 集合中元素获取的通用方法。</p>
+<p>原理：在获取元素前先判断集合中有没有下一个可以获取的元素，如果有，就把这个元素取出来，继续判断，如果还有就再取出来，直到没有下一个可获取的元素。这种元素的获取方式就称为迭代。</p>
+</blockquote>
+<blockquote>
+<p>迭代器接口：Iterator，它在 java.util 包中</p>
+<p>常用方法：</p>
+<ol>
+<li>hasNext()：判断集合中是否存在下一个可以获取的元素</li>
+<li>next()：取出下一个元素</li>
+</ol>
+<p>迭代器的使用步骤：</p>
+<ol>
+<li>调用 List 或者 Set 的 iterator() 方法，获取迭代器对象，这个迭代器的获取方式是通过 List 或者 Set 对象进行调用的，因此这个迭代器就与调用它的集合进行了绑定（关联），此时这个迭代器迭代的就是调用它的集合。</li>
+<li>调用迭代器的 hasNext() 方法，判断是否存在下一个可以获取的元素</li>
+<li>调用迭代器的 next() 方法，获取下一个元素</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">ArrayList&lt;String&gt; list =  <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+list.add(<span class="hljs-string">&quot;a&quot;</span>);
+list.add(<span class="hljs-string">&quot;b&quot;</span>);
+list.add(<span class="hljs-string">&quot;c&quot;</span>);
+list.add(<span class="hljs-string">&quot;d&quot;</span>);
+Iterator&lt;String&gt; it = list.iterator();
+<span class="hljs-keyword">while</span>(it.hasNext())&#123;
+    System.out.println(it.next());
+&#125;
+
+HashSet&lt;String&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();
+set.add(<span class="hljs-string">&quot;郭敬明&quot;</span>);
+set.add(<span class="hljs-string">&quot;蔡徐坤&quot;</span>);
+set.add(<span class="hljs-string">&quot;乔碧萝&quot;</span>);
+set.add(<span class="hljs-string">&quot;吴亦凡&quot;</span>);
+Iterator&lt;String&gt; iter = set.iterator();
+<span class="hljs-keyword">while</span>(iter.hasNext())&#123;
+    System.out.println(iter.next());
+&#125;</code></pre></div>
+<p>注：</p>
+<ol>
+<li>
+<p>Iterator 迭代器也是有泛型的，集合的泛型是什么类型，迭代器的泛型就是什么类型</p>
+</li>
+<li>
+<p>迭代器是所有 Collection 遍历的通用方法</p>
+</li>
+<li>
+<p>迭代器在迭代的过程中不可以对元素进行增删</p>
+<p>解决办法：使用 Iterator 的子接口 ListIterator</p>
+<p>在迭代器期间可以使用 ListIterator 的 add()、remove() 方法进行元素的增删</p>
+<div class="hljs"><pre><code class="hljs java">ArrayList&lt;String&gt; list =  <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+list.add(<span class="hljs-string">&quot;a&quot;</span>);
+list.add(<span class="hljs-string">&quot;b&quot;</span>);
+list.add(<span class="hljs-string">&quot;c&quot;</span>);
+list.add(<span class="hljs-string">&quot;d&quot;</span>);
+ListIterator&lt;String&gt; lit = list.listIterator();
+<span class="hljs-keyword">while</span>(lit.hasNext())&#123;
+    <span class="hljs-keyword">if</span>(lit.next().equals(<span class="hljs-string">&quot;b&quot;</span>))&#123;
+        <span class="hljs-comment">//lit.remove();</span>
+        lit.add(<span class="hljs-string">&quot;B&quot;</span>);
+    &#125;
+&#125;
+System.out.println(list);</code></pre></div>
+</li>
+</ol>
+</blockquote>
+<h3 id="十三-linkedhashset"><a class="markdownIt-Anchor" href="#十三-linkedhashset"></a> 十三， LinkedHashSet</h3>
+<blockquote>
+<p>概念：LinkedHashSet 是 Set 集合的一个有序的实现类</p>
+<p>能保持有序（存取顺序一致）的原理是 LinkedHashSet 在 HashSet 上多加了一条用于记录顺序的链表</p>
+</blockquote>
+<h3 id="十四-treeset"><a class="markdownIt-Anchor" href="#十四-treeset"></a> 十四， TreeSet</h3>
+<blockquote>
+<p>概念：TreeSet 是 Set 集合的一个能自动排序的实现类</p>
+<p>注：如果 TreeSet 中的元素对象是自定义类，那么这个类必须实现 Comparable 接口，重写 compareTo()方法</p>
+</blockquote>
+<h3 id="十五泛型"><a class="markdownIt-Anchor" href="#十五泛型"></a> 十五，泛型</h3>
+<blockquote>
+<p>概念：当无法确定类型时，可以使用泛型来表示要操作的数据类型，写在 &quot; &lt;&gt; &quot; 中</p>
+<p>泛型也可以看成是一个参数，用来接收数据类型</p>
+<p>当泛型确定下来后，那么所能操作的数据类型就是该指定类型了</p>
+</blockquote>
+<blockquote>
+<p>创建集合，不使用泛型：</p>
+<p>好处：默认类型是 Object ，可以存储任意的数据类型</p>
+<p>弊端：调用不同类型的功能时候，可能发生异常</p>
+<p>创建集合，使用泛型：</p>
+<p>好处：</p>
+<p>​	1. 避免了类型转换异常</p>
+<div class="hljs"><pre><code>  	2. 把运行时期的异常，放到了编译时期
+</code></pre></div>
+<p>弊端：泛型是什么类型，就只能存储什么类型</p>
+</blockquote>
+<blockquote>
+<p>泛型通配符：</p>
+<p>当使用泛型时，泛型不确定，可以使用通配符 ? 来表示</p>
+<p>泛型通配符的使用，是在受限泛型中：</p>
+<ol>
+<li>泛型的上限</li>
+</ol>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java">&lt; ? extends 类名 &gt;</code></pre></div>
+<p>限制：只能接收指定类型及其子类</p>
+<ol start="2">
+<li>泛型的下限</li>
+</ol>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java">&lt; ? <span class="hljs-keyword">super</span> 类名 &gt;</code></pre></div>
+<p>限制：只能接收指定类型及其父类</p>
+</blockquote>
+<h3 id="十六map"><a class="markdownIt-Anchor" href="#十六map"></a> 十六，Map</h3>
+<blockquote>
+<p>Collection 中定义的是单列集合</p>
+<p>Map 中定义的是双列集合，在 Map 中存储元素时，要将键和值形成一一对应的映射关系才能存储到集合中</p>
+<p>Map 的特点：</p>
+<ol>
+<li>Map 中的一个元素包含两个内容（一个是 key 键，另一个是 value 值）</li>
+<li>key 和 value 的数据类型是任意的</li>
+<li>value 是可以重复的</li>
+<li>Map 中 key 和 value 所形成关系称为一一对应的映射关系。</li>
+</ol>
+</blockquote>
+<h4 id="161-hashmap的常用方法"><a class="markdownIt-Anchor" href="#161-hashmap的常用方法"></a> 16.1 HashMap的常用方法</h4>
+<blockquote>
+<ol>
+<li>put(k, v):将 kv 键值对存储到 Map 中，当 key 重复时，返回被替换的 value</li>
+<li>remove(k)：将键所对应的整个键值对删除，返回被删除的 value</li>
+<li>remove(k, v)：判断参数形成的键值对是否在集合中，如果存在，返回 true 并删除</li>
+<li>replace(k, v)：将 v 替换指定 k 上的 值</li>
+<li>replace(k , oldValue , newValue)：判断 k 和 oldValue 形成的键值对是否在集合中，如果存在，用 newValue 替换 k 上的 oldValue</li>
+<li>clear()</li>
+<li>size()</li>
+<li>containsKey(Object o)：判断是否存在指定键</li>
+<li>containsValue(Object o)：判断是否存在指定值</li>
+<li>isEmpty()</li>
+<li>values()：返回 Map 中值组成的 Collection 集合</li>
+</ol>
+</blockquote>
+<h4 id="162-map的遍历"><a class="markdownIt-Anchor" href="#162-map的遍历"></a> 16.2 Map的遍历</h4>
+<blockquote>
+<p>Map 不能使用普通 for 循环，因为 Map 没有下标</p>
+<p>Map 也不能使用增强 for 循环，因为 Map 对象不是 Iterable 实例，如果使用增强 for 循环遍历 Map，会报错。 Can only iterate over an array or an instance of java.lang.Iterable</p>
+</blockquote>
+<blockquote>
+<p>遍历 Map 的方式：</p>
+<p>一，</p>
+<ol>
+<li>通过 Map 的 keySet() 方法，获取 Map 集合中所有 Key 组成的 Set 集合</li>
+<li>遍历该 Set 集合来获取 Map 中的每一个 Key</li>
+<li>通过 Map 的 get(k) 方法获取每一个 Value</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">HashMap&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+map.put(<span class="hljs-string">&quot;HGFDF&quot;</span>, <span class="hljs-string">&quot;李四&quot;</span>);
+map.put(<span class="hljs-string">&quot;GFDC&quot;</span>, <span class="hljs-string">&quot;李四&quot;</span>);
+map.put(<span class="hljs-string">&quot;GFDD&quot;</span>, <span class="hljs-string">&quot;赵云&quot;</span>);
+map.put(<span class="hljs-string">&quot;GVFDSE&quot;</span>, <span class="hljs-string">&quot;王五&quot;</span>);
+map.put(<span class="hljs-string">&quot;FFDSA&quot;</span>, <span class="hljs-string">&quot;田七&quot;</span>);
+Set&lt;String&gt; keys = map.keySet();
+<span class="hljs-comment">/*for (String k : keys) &#123;</span>
+<span class="hljs-comment">			System.out.println(k + &quot;===&quot; + map.get(k));</span>
+<span class="hljs-comment">		&#125;*/</span>
+Iterator&lt;String&gt; it = keys.iterator();
+<span class="hljs-keyword">while</span>(it.hasNext())&#123;
+    String key = it.next();
+    System.out.println(key + <span class="hljs-string">&quot;-&quot;</span>+ map.get(key));
+&#125;</code></pre></div>
+<p>二，</p>
+<ol>
+<li>
+<p>通过 Map 的 entrySet() 方法，获取 Map 集合中每个键值对的映射关系组成的 Set 集合</p>
+<p>由于 键和值 形成的是一一对应的映射关系，所以通过映射关系就可以确定当初这个关系是由哪个键和哪个值形成的</p>
+</li>
+<li>
+<p>遍历该 Set 集合来获取 Map 中的每一个映射关系</p>
+</li>
+<li>
+<p>通过映射关系 Entry 对象的 getKey() 和 getValue() 来分别获取键和值</p>
+</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">HashMap&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+map.put(<span class="hljs-string">&quot;HGFDF&quot;</span>, <span class="hljs-string">&quot;李四&quot;</span>);
+map.put(<span class="hljs-string">&quot;GFDC&quot;</span>, <span class="hljs-string">&quot;李四&quot;</span>);
+map.put(<span class="hljs-string">&quot;GFDD&quot;</span>, <span class="hljs-string">&quot;赵云&quot;</span>);
+map.put(<span class="hljs-string">&quot;GVFDSE&quot;</span>, <span class="hljs-string">&quot;王五&quot;</span>);
+map.put(<span class="hljs-string">&quot;FFDSA&quot;</span>, <span class="hljs-string">&quot;田七&quot;</span>);
+Set&lt;Entry&lt;String, String&gt;&gt; set = map.entrySet();
+<span class="hljs-comment">/*for(Entry&lt;String, String&gt; en : set)&#123;</span>
+<span class="hljs-comment">	System.out.println(en.getKey() + &quot;===&quot;+ en.getValue());</span>
+<span class="hljs-comment">&#125;*/</span>
+Iterator&lt;Entry&lt;String, String&gt;&gt; it = set.iterator();
+<span class="hljs-keyword">while</span>(it.hasNext())&#123;
+    Entry&lt;String, String&gt; en = it.next();
+    System.out.println(en.getKey() + <span class="hljs-string">&quot;===&quot;</span>+ en.getValue());
+&#125;</code></pre></div>
+</blockquote>
+<h4 id="163-map-中其他的常见实现类"><a class="markdownIt-Anchor" href="#163-map-中其他的常见实现类"></a> 16.3 Map 中其他的常见实现类</h4>
+<blockquote>
+<ol>
+<li>HashMap：不保证线程同步，速度快，无序的</li>
+<li>LinkedHashMap：有序的 Map</li>
+<li>HashTable：线程安全，速度慢</li>
+<li>TreeMap：根据 key 自动排序，key 的类型必须实现 Comparable 接口</li>
+<li>Properties：key 和 value 都必须 String，主要用于读取配置文件</li>
+</ol>
+</blockquote>
+<h4 id="164-map-中存储自定义类型"><a class="markdownIt-Anchor" href="#164-map-中存储自定义类型"></a> 16.4 Map 中存储自定义类型</h4>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">多线程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/12/%E5%B8%B8%E7%94%A8%E7%B1%BB%E7%AD%89/">
+                        <span class="hidden-mobile">常用类等</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/pllee1121" target="_blank" rel="nofollow noopener">
+        <span>Github</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2019/02/12/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz'
+    var app_key = 'sNxHutMd7lXakXdx7yzpfpqY'
+    var server_url = 'https://h3koiw2p.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "集合框架&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'pllee', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127032508-1"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-127032508-1');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

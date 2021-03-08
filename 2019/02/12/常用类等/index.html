@@ -1,0 +1,1481 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <link rel="icon" type="image/png" href="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lpliang">
+  <meta name="keywords" content="">
+  <title>常用类等 - lpliang&#39;s space</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>lpliang's space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-12 11:48" pubdate>
+        2019年2月12日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      65
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">常用类等</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一scanner"><a class="markdownIt-Anchor" href="#一scanner"></a> 一，Scanner</h3>
+<blockquote>
+<p>概念：Scanner 是一个专门用于接收键盘输入的类，它在 java.util 包中的</p>
+<p>构造函数：</p>
+<ol>
+<li>new Scanner(<a target="_blank" rel="noopener" href="http://System.in">System.in</a>)</li>
+</ol>
+<p>常用功能：</p>
+<ol>
+<li>
+<p>nextInt()</p>
+</li>
+<li>
+<p>nextInt(int radix)：</p>
+<p>举例：nextInt(2)，表示系统会将输入的内容视为二进制数，返回一个对应的十进制数</p>
+</li>
+<li>
+<p>nextDouble()</p>
+</li>
+<li>
+<p>next() 和 String nextLine()：都是用于接收字符串，next()方法会将空白字符视为输入结束</p>
+</li>
+</ol>
+<p>注：如果输入类型与指定类型不匹配会发生 InputMismatchException （输入类型不匹配异常）</p>
+</blockquote>
+<h3 id="二random"><a class="markdownIt-Anchor" href="#二random"></a> 二，Random</h3>
+<blockquote>
+<p>概念：Random 是一个专门用于产生伪随机数的类，它在 java.util包中</p>
+<p>构造函数：</p>
+<ol>
+<li>new Random()</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>nextInt()</li>
+<li>nextInt(int bound)：例如随机[ n， m ]之间的数，nextInt(m - n + 1) + n</li>
+<li>nextDouble()：返回 [ 0.0，1.0 )</li>
+</ol>
+</blockquote>
+<h3 id="三math"><a class="markdownIt-Anchor" href="#三math"></a> 三，Math</h3>
+<blockquote>
+<p>概念：Math是一个用于执行基本数学运算，例如初等函数，对数、三角函数的类，它 java.lang 包中</p>
+<p>注：</p>
+<ol>
+<li>Math类是 final 的</li>
+<li>Math类中的成员变量和成员方法都是静态的</li>
+<li>Math类的构造函数是私有化的</li>
+</ol>
+<p>静态常量：</p>
+<ol>
+<li>E：自然对数的底数</li>
+<li>PI：圆周率</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>
+<p>abs(double n)：求绝对值</p>
+</li>
+<li>
+<p>ceil(double n)：向上取整</p>
+</li>
+<li>
+<p>floor(double n)：向下取整</p>
+</li>
+<li>
+<p>toDegrees(double n)：弧度制转角度值</p>
+</li>
+<li>
+<p>toRadians(double n)：角度值转弧度制</p>
+</li>
+<li>
+<p>sin(double n)</p>
+</li>
+<li>
+<p>pow(double a,double b)：求a的b次方</p>
+</li>
+<li>
+<p>max(double a,double b)</p>
+</li>
+<li>
+<p>min(double a,double b)</p>
+</li>
+<li>
+<p>sqrt(double n)：开根号</p>
+</li>
+<li>
+<p>random()：随机返回 [ 0.0，1.0 )</p>
+</li>
+<li>
+<p>rint(double n)：四舍五入，返回 double</p>
+</li>
+<li>
+<p>round(double n)：四舍五入，返回 int</p>
+<p>注：rint(-3.5) 返回-4.0；round(-3.5)返回 -3</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="四string"><a class="markdownIt-Anchor" href="#四string"></a> 四，String</h3>
+<blockquote>
+<p>概念：String 表示字符串，它 java.lang 包中</p>
+<p>注：</p>
+<ol>
+<li>所有字符串字面值，如：“abc”，都是字符串类的对象</li>
+<li>字符串是常量</li>
+<li>字符串存储在字符串常量池中，是共享的</li>
+<li>== 在比较基本数据类型时，比较的是数据值；在比较引用数据类型时，比较的是地址；在 Object 类中有 equals 方法用来比较两个对象的地址值，在 String 类中对Object的 equals 方法进行了重写，来比较两个字符串的数据值是否相同</li>
+</ol>
+<p>构造函数：</p>
+<ol>
+<li>new String()：创建一个空的字符串</li>
+<li>new String(byte[] bytes)：将字节数组中的元素根据ASCII码表转换成字符后生成字符串</li>
+<li>new String(char[] chars)：将字符数组中的元素拼接成一个字符串</li>
+<li>new String(String s)</li>
+<li>new String(byte[] bytes, Charset charset)：可以根据指定的字符集编码生成字节数组所对应的字符串</li>
+<li>new String(byte[] bytes , int offset , int length)：从字节数组的指定位置开始获取指定数量的元素拼接成字符串</li>
+<li>new String(char[] chars , int offset , int count)：从字符数组的指定位置开始获取指定数量的元素拼接成字符串</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>charAt(int index)：根据下标返回字符</li>
+<li>indexOf(String str)：根据字符串内容返回所在下标</li>
+<li>indexOf(String str，int index)：从指定位置开始查找指定字符串所在的下标</li>
+<li>lastIndeOf(String str)：返回最后一个字符串内容所在的下标</li>
+<li>lastIndexOf(String str, int index)：从指定位置开始，从后往前查找最后一个字符串所在的下标</li>
+<li>compareTo(String str)：根据字典顺序比较字符的大小，返回差值</li>
+<li>compareToIgnoreCase(String str)：忽略大小写比较</li>
+<li>equals(String str)：比较字符串的内容，返回布尔值</li>
+<li>equalsIgnoreCase(String str)：忽略大小写比较字符串内容</li>
+<li>contains(String str)：判断字符串是否包含子串</li>
+<li>codePointAt(int index)：通过下标返回字符的十进制数</li>
+<li>concat(String str)：拼接字符串</li>
+<li>endsWith(String str)：判断是否以指定字符串结尾</li>
+<li>startsWith(String str)：判断是否以指定字符串开头</li>
+<li>getBytes()：获取字符串的字节数组</li>
+<li>toCharArray()：获取字符串的字符数组</li>
+<li>isEmpty()：判断字符串的内容是否为空</li>
+<li>length()：返回字符串的长度</li>
+<li>replace(String oldStr, String newStr)：将新字符串替换原始字符串</li>
+<li>substring(int index)：从指定位置截取到字符串末尾</li>
+<li>subString(int beginIndex, int endIndex)：从begin下标截取到end下标，不包含end</li>
+<li>toLowerCase()：将大写字母转换成小写字母</li>
+<li>toUpperCase()：将小写字母转换成大写字母</li>
+<li>trim()：去除字符串两端的空格</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>正则表达式</p>
+<p>概念：正则表达式是一种特殊的用来对其他字符串进行匹配、切割、替换、查找的规则，正则表达式本身也是一个字符串。</p>
+<p>功能：</p>
+<ol>
+<li>匹配：字符串.matches(规则)</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 匹配手机号，1开头，纯数字，11位</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(String tel)</span></span>&#123;
+    String regex = <span class="hljs-string">&quot;1\\d&#123;10&#125;&quot;</span>;
+    System.out.println(tel.matches(regex));
+&#125;
+
+<span class="hljs-comment">// 匹配邮箱，前1~3位是字母，4~8位是数字，@,数字字母下划线2~7位，.com结尾</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f2</span><span class="hljs-params">(String email)</span></span>&#123;
+    String regex = <span class="hljs-string">&quot;[a-zA-Z]&#123;1,3&#125;[0-9]&#123;4,8&#125;@\\w&#123;2,7&#125;[.]com&quot;</span>;
+    System.out.println(email.matches(regex));
+&#125;</code></pre></div>
+<ol start="2">
+<li>切割：字符串.split(规则)，返回 String 数组</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 获取IP地址中的每一段</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(String ip)</span></span>&#123;
+    String regex = <span class="hljs-string">&quot;\\.&quot;</span>;
+    String str[] = ip.split(regex);
+    System.out.println(Arrays.toString(str));
+    System.out.println(str.length);
+&#125;</code></pre></div>
+<ol start="3">
+<li>替换：字符串.replaceAll(规则，新值)</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 用*替换字符串中的所有“天”</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f1</span><span class="hljs-params">(String msg)</span></span>&#123;
+    String regex = <span class="hljs-string">&quot;天+&quot;</span>;
+    msg = msg.replaceAll(regex, <span class="hljs-string">&quot;*&quot;</span>);
+    System.out.println(msg);
+&#125;
+
+<span class="hljs-comment">// 叠词替换</span>
+<span class="hljs-comment">// 帮别人改掉口吃的毛病“我我我我是是是是是好人人人”-&gt;“我是好人”</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">f2</span><span class="hljs-params">()</span></span>&#123;
+    String s = <span class="hljs-string">&quot;我我我我是是是是是好人人人&quot;</span>;
+    s = s.replaceAll(<span class="hljs-string">&quot;(.)\\1+&quot;</span>, <span class="hljs-string">&quot;$1&quot;</span>);
+    System.out.println(s);
+&#125;</code></pre></div>
+<ol start="4">
+<li>查找</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 查找字符串中3个字母组成的单词</span>
+Pattern p = Pattern.compile(<span class="hljs-string">&quot;\\b[a-zA-Z]&#123;3&#125;\\b&quot;</span>);
+Matcher m = p.matcher(<span class="hljs-string">&quot;You are a student!!!&quot;</span>);
+<span class="hljs-keyword">while</span>(m.find())&#123;<span class="hljs-comment">// find()：判断是否有下一个符合正则的子字符串</span>
+    System.out.println(m.group());<span class="hljs-comment">// group()：获取符合规则的下一个子字符串</span>
+&#125;</code></pre></div>
+<div class="hljs"><pre><code class="hljs inform7">字符类 
+<span class="hljs-comment">[abc]</span> a、b 或 c（简单类） 
+<span class="hljs-comment">[^abc]</span> 任何字符，除了 a、b 或 c（否定） 
+<span class="hljs-comment">[a-zA-Z]</span> a 到 z 或 A 到 Z，两头的字母包括在内（范围） 
+<span class="hljs-comment">[a-d<span class="hljs-comment">[m-p]</span>]</span> a 到 d 或 m 到 p：<span class="hljs-comment">[a-dm-p]</span>（并集） 
+<span class="hljs-comment">[a-z&amp;&amp;<span class="hljs-comment">[def]</span>]</span> d、e 或 f（交集） 
+<span class="hljs-comment">[a-z&amp;&amp;<span class="hljs-comment">[^bc]</span>]</span> a 到 z，除了 b 和 c：<span class="hljs-comment">[ad-z]</span>（减去） 
+<span class="hljs-comment">[a-z&amp;&amp;<span class="hljs-comment">[^m-p]</span>]</span> a 到 z，而非 m 到 p：<span class="hljs-comment">[a-lq-z]</span>（减去） 
+  
+预定义字符类 
+. 任何字符（与行结束符可能匹配也可能不匹配） 
+\d 数字：<span class="hljs-comment">[0-9]</span> 
+\D 非数字： <span class="hljs-comment">[^0-9]</span> 
+\s 空白字符：<span class="hljs-comment">[\t\n\x0B\f\r]</span> 
+\S 非空白字符：<span class="hljs-comment">[^\s]</span> 
+\w 单词字符：<span class="hljs-comment">[a-zA-Z_0-9]</span> 
+\W 非单词字符：<span class="hljs-comment">[^\w]</span> 
+
+Greedy 数量词 
+X? X，一次或一次也没有 
+X* X，零次或多次 
+X+ X，一次或多次 
+X&#123;n&#125; X，恰好 n 次 
+X&#123;n,&#125; X，至少 n 次 
+X&#123;n,m&#125; X，至少 n 次，但是不超过 m 次 
+</code></pre></div>
+</blockquote>
+<h3 id="五stringbuilder和stringbuffer"><a class="markdownIt-Anchor" href="#五stringbuilder和stringbuffer"></a> 五，StringBuilder和StringBuffer</h3>
+<blockquote>
+<p>为什么要使用StringBuilder、StringBuffer？</p>
+<p>原因：</p>
+<ol>
+<li>String 是不可变的，StringBuilder 和 StringBuffer称为字符串缓冲区，它们是可变的</li>
+<li>String 占用资源多</li>
+</ol>
+<p>以 StringBuffer 为例：</p>
+<p>概念：StringBuffer 是可变的字符序列，StringBuffer 是字符串缓冲区，它 java.lang 包中</p>
+<p>构造函数：</p>
+<ol>
+<li>new StringBuffer()：构造一个其中不带字符的字符串缓冲区，初始容量为 16 个字符。</li>
+<li>new StringBuffer(int capacity)：构造一个不带字符，但具有指定初始容量的字符串缓冲区。</li>
+<li>new StringBuffer(String str)：构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容。</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>append(Object obj)</li>
+<li>delete(int start, int end)</li>
+<li>deleteCharAt(int index)</li>
+<li>insert(int index, Object obj)</li>
+<li>reverse()</li>
+<li>setCharAt(int index, Char c)</li>
+</ol>
+<p>StringBuffer 和 StringBuilder 的区别：</p>
+<ol>
+<li>StringBuffer 线程安全，StringBuilder 不保证线程同步</li>
+<li>StringBuilder 比 StringBuffer 更快</li>
+</ol>
+<p>StringBuffer 和 StringBuilder 与 String 的转换：</p>
+<ol>
+<li>StringBuffer / StringBuilder  -&gt; String</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 使用 toString</span>
+StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer(<span class="hljs-string">&quot;abc123&quot;</span>);
+String s = sb.toString();
+
+<span class="hljs-comment">// 使用 String 的构造函数</span>
+StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer(<span class="hljs-string">&quot;abc123&quot;</span>);
+String s = <span class="hljs-keyword">new</span> String(sb);</code></pre></div>
+<ol start="2">
+<li>String -&gt; StringBuffer / StringBuilder</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 需要使用 StringBuffer / StringBuilder 的构造函数进行转换</span>
+String s = <span class="hljs-string">&quot;abc&quot;</span>;
+StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder(s);</code></pre></div>
+</blockquote>
+<h3 id="六date"><a class="markdownIt-Anchor" href="#六date"></a> 六，Date</h3>
+<blockquote>
+<p>概念：类 Date 表示特定的瞬间，精确到毫秒。 它 java.util 包中</p>
+<p>作用：</p>
+<ol>
+<li>通过 Date 对象，获取对应的年、月、日、时、分、秒等时间字段</li>
+<li>将 Date 对象格式化成标准的日期字符串</li>
+<li>将格式化后的日期字符串进行解析，转换成 Date 对象</li>
+</ol>
+<p>构造函数：</p>
+<ol>
+<li>new Date()</li>
+<li>new Date(long date)</li>
+<li>new Date (int year,  int month, int date, int hrs, int min, int sec)：已过期</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>getXxx()：获取指定的时间字段</li>
+<li>setXxx()：设置指定的时间字段</li>
+<li>a . after (Date b)：判断日期 a 是否在日期 b 之后</li>
+<li>a . before (Date b)：判断日期 a 是否在日期 b 之前</li>
+<li>getTime()：功能同 System.currentTimeMillis()；</li>
+</ol>
+</blockquote>
+<h3 id="七simpledateformat"><a class="markdownIt-Anchor" href="#七simpledateformat"></a> 七，SimpleDateFormat</h3>
+<blockquote>
+<p>概念：SimpleDateFormat 是一个以与语言环境有关的方式来格式化和解析日期的具体类。它允许进行格式化（日期 -&gt;  文本）、解析（文本 -&gt; 日期）和规范化。  它 java.text 包中</p>
+<p>功能：</p>
+<ol>
+<li>格式化（Date对象 -&gt; String）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">SimpleDateFormat sdf = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;yyyy年MM月dd日 HH时mm分ss秒&quot;</span>);
+String time = sdf.format(<span class="hljs-keyword">new</span> Date(System.currentTimeMillis() - <span class="hljs-number">3600</span> * <span class="hljs-number">16</span> * <span class="hljs-number">1000</span>));
+System.out.println(time);</code></pre></div>
+<ol start="2">
+<li>解析（String -&gt; Date对象）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">SimpleDateFormat sdf = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);
+String time = <span class="hljs-string">&quot;2020-07-09 22:12:51&quot;</span>;
+Date d = sdf.parse(time);
+System.out.println(d);</code></pre></div>
+</blockquote>
+<h3 id="八calendar"><a class="markdownIt-Anchor" href="#八calendar"></a> 八，Calendar</h3>
+<blockquote>
+<p>概念：Calendar 类是一个抽象类，它提供了一些与日期时间字段进行转换的方法，它 java.util 包中</p>
+<p>Calendar 提供了一个静态方法  getInstance，以获得此类型的一个通用的对象。Calendar 的  getInstance 方法返回一个 Calendar 对象，其日历字段已由当前日期和时间初始化。</p>
+<p>对象的获取：</p>
+<ol>
+<li>Calendar.getInstance()</li>
+</ol>
+<p>常用方法：</p>
+<ol>
+<li>
+<p>get(int field)：返回指定日历字段的值</p>
+</li>
+<li>
+<p>set(int field，int value)：将指定的日历字段设置为给定的值</p>
+</li>
+<li>
+<p>set(int year，int month，int date ，int hour，int minute，int second)</p>
+</li>
+<li>
+<p>add(int field，int value)：为指定的日历字段设置添加或者减去指定的时间</p>
+<p>value：</p>
+<p>​	正数：添加</p>
+<p>​	负数：减少</p>
+</li>
+<li>
+<p>getTime()：返回一个 Date 对象</p>
+</li>
+<li>
+<p>getTimeInMillis()：功能同 Date 的 getTime() 和 System.currentTimeMillis()；</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="九object"><a class="markdownIt-Anchor" href="#九object"></a> 九，Object</h3>
+<blockquote>
+<p>概念：类 Object 是类层次结构的根类。每个类都使用 Object 作为超类。所有对象（包括数组）都实现这个类的方法。</p>
+<p>常用方法：</p>
+<ol>
+<li>
+<p>toString()</p>
+<p>打印对象时，会调用父类中的 toString() 方法输出地址，没有意义；</p>
+<p>需要对父类的 toString() 方法进行重写；</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>&#123;
+	<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Student [name=&quot;</span> + name + <span class="hljs-string">&quot;, age=&quot;</span> + age + <span class="hljs-string">&quot;]&quot;</span>;
+&#125;</code></pre></div>
+</li>
+<li>
+<p>equals()</p>
+<p>重写 equals() 方法可以比较两个对象的属性是否相等</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span> </span>&#123;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == obj)&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    &#125;
+    <span class="hljs-keyword">if</span>(obj == <span class="hljs-keyword">null</span>)&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    &#125;
+    <span class="hljs-keyword">if</span>(!(obj <span class="hljs-keyword">instanceof</span> Student))&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    &#125;
+    Student s = (Student)obj;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name.equals(s.name) &amp;&amp; <span class="hljs-keyword">this</span>.age == s.age;
+&#125;</code></pre></div>
+<p>补充：</p>
+<p>Objects中的静态方法equals</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object a, Object b)</span> </span>&#123;
+	<span class="hljs-keyword">return</span> (a == b) || (a != <span class="hljs-keyword">null</span> &amp;&amp; a.equals(b));
+&#125;
+<span class="hljs-comment">// 该方法可以避免空指针异常</span></code></pre></div>
+</li>
+</ol>
+</blockquote>
+<h3 id="十arrays"><a class="markdownIt-Anchor" href="#十arrays"></a> 十，Arrays</h3>
+<blockquote>
+<p>概念：此类包含用来操作数组（比如排序和搜索）的各种方法。它 java.util 包中</p>
+<p>常用方法：</p>
+<ol>
+<li>
+<p>toString(数组)</p>
+</li>
+<li>
+<p>binarySearch(数组，value)：使用二分搜索法，在数组中查询指定元素的位置，</p>
+<p>前提：1. 必须是升序排列的 2.不能有重复元素</p>
+</li>
+<li>
+<p>sort(数组)：升序排列</p>
+</li>
+<li>
+<p>copyOf(数组，长度)</p>
+</li>
+<li>
+<p>asList(T…a)：将可变参数中的元素封装成一个 List 集合</p>
+</li>
+<li>
+<p>fill(数组，value)：使用 value 值赋值给指定数组的每个元素</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="十一system"><a class="markdownIt-Anchor" href="#十一system"></a> 十一，System</h3>
+<blockquote>
+<p>概念：System 类包含一些有用的类字段和方法。它不能被实例化。它 java.lang 包中</p>
+<p>字段摘要：</p>
+<ol>
+<li>in</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(System.in));</code></pre></div>
+<ol start="2">
+<li>out</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">System.out.println();</code></pre></div>
+<ol start="3">
+<li>err：“标准”错误输出流</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">System.err.println();</code></pre></div>
+<p>常用方法：</p>
+<ol>
+<li>System.currentTimeMillis()</li>
+<li>System.arrayCopy(Object src , int srcPos , Object dest , int destPos , int length)</li>
+<li>System.exit(0)：结束 JVM , 参数：0 表示正常关闭，非0 表示异常关闭</li>
+<li>System.gc()：运行垃圾回收器</li>
+</ol>
+</blockquote>
+<h3 id="十二包装类"><a class="markdownIt-Anchor" href="#十二包装类"></a> 十二，包装类</h3>
+<h4 id="121-概念"><a class="markdownIt-Anchor" href="#121-概念"></a> 12.1 概念</h4>
+<blockquote>
+<p>概念：Java 的数据类型分为基本数据类型和引用数据类型，使用基本数据类型的原因主要是效率高；但是因为基本数据类型没有对象，所以不能对属性和方法进行调用。因此如果我们想要使用基本数据类型进行属性和方法的调用就需要使用到它们对应的包装类。</p>
+<p>综上：包装类就是基本数据类型对应的引用数据类型</p>
+<p>基本数据类型				包装类</p>
+<p>byte									Byte</p>
+<p>short								  Short</p>
+<p>int										Integer</p>
+<p>long									Long</p>
+<p>float									Float</p>
+<p>double                          Double</p>
+<p>char									Character</p>
+<p>boolean							 Boolean</p>
+</blockquote>
+<h4 id="122-包装类对象的创建"><a class="markdownIt-Anchor" href="#122-包装类对象的创建"></a> 12.2 包装类对象的创建</h4>
+<blockquote>
+<p>格式：</p>
+<ol>
+<li>
+<p>Integer i = new Integer(int)；</p>
+</li>
+<li>
+<p>Integer j = new Integer(String)；</p>
+</li>
+</ol>
+<p>注：如果参数不是整数形式的字符串会发生 NumberFormatException（数字格式异常）</p>
+</blockquote>
+<h4 id="123-成员的变量和成员方法"><a class="markdownIt-Anchor" href="#123-成员的变量和成员方法"></a> 12.3 成员的变量和成员方法</h4>
+<blockquote>
+<ol>
+<li>static MAX_VALUE</li>
+<li>static MIN_VALUE</li>
+<li>static max(int a, int b)</li>
+<li>static min(int a, int b)</li>
+<li>static compare(int a, int b)：返回 0：表示相同，1：表示 a &gt; b ，-1：表示 a &lt; b</li>
+<li>static toBinaryString(int i )</li>
+<li>static toOctalString(int i)</li>
+<li>static toHexString(int i )</li>
+</ol>
+</blockquote>
+<h4 id="124-装箱和拆箱"><a class="markdownIt-Anchor" href="#124-装箱和拆箱"></a> 12.4 装箱和拆箱</h4>
+<blockquote>
+<p>概念：基本类型和对应包装类之间的转换就是装箱和拆箱</p>
+<p>装箱：将基本数据类型转换成对应的包装类（基本 --&gt; 包装）</p>
+<ol>
+<li>构造函数：
+<ol>
+<li>new Integer(int i)</li>
+</ol>
+</li>
+<li>静态方法：
+<ol>
+<li>valueOf(int i)</li>
+</ol>
+</li>
+</ol>
+<p>拆箱：将包装类转换成对应的基本数据类型（包装 --&gt; 基本）</p>
+<ol>
+<li>成员方法：
+<ol>
+<li>intValue()</li>
+</ol>
+</li>
+</ol>
+<p>从 jdk 1.5 开始提供了自动装拆箱：装箱和拆箱的动作自动完成（直接赋值）</p>
+<p>自动拆箱：</p>
+<div class="hljs"><pre><code class="hljs java">&gt;<span class="hljs-keyword">int</span> t1 = <span class="hljs-keyword">new</span> Integer(<span class="hljs-number">7</span>);</code></pre></div>
+<p>自动装箱：</p>
+<div class="hljs"><pre><code class="hljs java">&gt;Integer t2 = <span class="hljs-number">6</span>;</code></pre></div>
+<p>补充：jdk 9 开始包装类中的构造函数都变成了过期函数，因为系统不再推荐使用构造函数来创建包装类的对象，系统推荐以自动装箱的方法来创建</p>
+</blockquote>
+<h4 id="125-基本类型与字符串类型的转换"><a class="markdownIt-Anchor" href="#125-基本类型与字符串类型的转换"></a> 12.5 基本类型与字符串类型的转换</h4>
+<blockquote>
+<p>基本类型/包装类 --&gt; 字符串：</p>
+<ol>
+<li>拼接空字符串（最常用）</li>
+<li>使用包装类中的静态方法 toString(参数)</li>
+<li>使用包装类中的成员方法 toString()</li>
+<li>使用 String 类中的静态方法 valueOf(参数)</li>
+</ol>
+<p>字符串 --&gt; 基本类型/包装类</p>
+<ol>
+<li>
+<p>使用包装类的构造函数（不推荐）</p>
+</li>
+<li>
+<p>使用包装类的静态 parseXxx(String str) 方法</p>
+</li>
+<li>
+<p>使用包装类的静态 valueOf(String str) 方法</p>
+<p>注：parseXxx(String str) 和 valueOf(String str) 方法可能会发生NumberFormatException（数字格式异常）</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="十三异常"><a class="markdownIt-Anchor" href="#十三异常"></a> 十三，异常</h3>
+<h4 id="131-概念"><a class="markdownIt-Anchor" href="#131-概念"></a> 13.1 概念</h4>
+<blockquote>
+<p>概念：在程序中的发生的不正常的情况，系统将其封装成了类，就是异常类，当运行到有异常的代码时，程序会终止。</p>
+</blockquote>
+<h4 id="132-异常的体系"><a class="markdownIt-Anchor" href="#132-异常的体系"></a> 13.2 异常的体系</h4>
+<blockquote>
+<p>Throwable：它是错误或异常的超类。</p>
+<p>​	– Exception 异常：可以避免的异常问题，或者可以通过抛出或者捕获来解决</p>
+<p>​	– Error 错误：不能处理，只能尽可能避免的错误</p>
+</blockquote>
+<h4 id="133-异常的原理"><a class="markdownIt-Anchor" href="#133-异常的原理"></a> 13.3 异常的原理</h4>
+<h4 id="134-异常的处理"><a class="markdownIt-Anchor" href="#134-异常的处理"></a> 13.4 异常的处理</h4>
+<blockquote>
+<p>方式一：使用 throws 关键字将异常抛给调用者</p>
+<p>作用：当方法内部发生了异常后，可以通过 throws 将异常对象抛给调用者，让调用者来决定是进行捕获还是继续抛出，如果在不断抛出的过程中，有了捕获动作，那么异常就由捕获进行了处理，不再将异常对象抛给 JVM。</p>
+<p>问：使用抛出的方式将异常抛给了调用者，并没有实质上的对异常进行处理，那它的意义是什么？</p>
+<p>答：在方法的声明上告知了调用者当前方法会发生何种异常，那么不同的调用者就可以根据具体情况对异常进行不同的处理。</p>
+<p>注：</p>
+<ol>
+<li>throws 关键字必须写在方法的声明位置</li>
+<li>throws 关键字后必须跟上发生的异常类型或者Exception</li>
+<li>如果抛出的是 RuntimeException 及其子类，那么调用者可以不进行异常的处理；</li>
+<li>如果抛出的不是 RuntimeException 及其子类，那么调用者必须对异常进行处理（继续抛出，捕获）</li>
+<li>如果方法中出现了多个异常时，在方法声明处也可以抛出多个异常</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>方式二：使用 try-catch 代码块对异常进行捕获</p>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span>&#123;
+    <span class="hljs-comment">// 可能发生异常的代码（需要进行异常检测的代码）</span>
+&#125;<span class="hljs-keyword">catch</span>(当 <span class="hljs-keyword">try</span> 中发生异常后创建的异常类对象)&#123;
+    <span class="hljs-comment">// 当 try 中发生异常时，会立即进入 catch ，由 catch 代码块对异常进行处理</span>
+&#125;</code></pre></div>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span>&#123;
+    
+&#125;<span class="hljs-keyword">catch</span>()&#123;
+    
+&#125;<span class="hljs-keyword">finally</span>&#123;
+    <span class="hljs-comment">// finally 中的代码一定会执行，一般在 finally 中执行释放资源的动作</span>
+&#125;</code></pre></div>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span>&#123;
+    
+&#125;
+<span class="hljs-keyword">finally</span>&#123;
+    
+&#125;</code></pre></div>
+<p>注：</p>
+<ol>
+<li>try 代码块用于检测可能发生异常的代码</li>
+<li>catch 代码块中的代码在 try 代码块没有发生异常时不会执行；try 中出现异常时，会立即进入 catch 处理异常</li>
+<li>catch 后 &quot;()&quot;中的异常类对象必须是所发生的异常类对象或者它的父类对象</li>
+<li>finally 中的代码一定会执行，一般用来释放资源</li>
+<li>try 、 catch、 finally 都不能单独使用</li>
+<li>try 或者 catch 中有 return 语句，finally 中的代码仍然会执行；如果 finally 中 return，那么无论方法是否有异常都会返回 finally 中的 return</li>
+</ol>
+</blockquote>
+<h4 id="135-try-catch-处理多个异常的情况"><a class="markdownIt-Anchor" href="#135-try-catch-处理多个异常的情况"></a> 13.5 try-catch 处理多个异常的情况</h4>
+<blockquote>
+<ol>
+<li>
+<p>多个异常一次处理</p>
+<p>try 中发生异常时，直接创建 Exception 对象进行异常的处理</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;
+    <span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;;
+    Random r = <span class="hljs-keyword">new</span> Random();
+    <span class="hljs-keyword">int</span> index = r.nextInt(<span class="hljs-number">5</span>);
+    System.out.println(<span class="hljs-number">10</span> / arr[index]);
+&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+    System.out.println(<span class="hljs-string">&quot;错了&quot;</span>);
+&#125;</code></pre></div>
+</li>
+<li>
+<p>多个异常分别处理</p>
+<p>在 try 后，使用多个 catch 代码块，针对程序出现的各种异常进行单独的捕获</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;
+    <span class="hljs-keyword">int</span>[] arr = &#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;;
+    Random r = <span class="hljs-keyword">new</span> Random();
+    <span class="hljs-keyword">int</span> index = r.nextInt(<span class="hljs-number">5</span>);
+    System.out.println(<span class="hljs-number">10</span> / arr[index]);
+&#125; <span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;
+    System.out.println(<span class="hljs-string">&quot;越界了&quot;</span>);
+&#125; <span class="hljs-keyword">catch</span> (ArithmeticException e) &#123;
+    System.out.println(<span class="hljs-string">&quot;除零了&quot;</span>);
+&#125;</code></pre></div>
+</li>
+<li>
+<p>处理未知异常</p>
+<p>如果 catch 没有考虑到所有可能发生的异常，那么仍然可能会有未知的异常方法，此时我们可以在多个 catch 的最后使用 Exception 进行未知异常的捕获。</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;
+    <span class="hljs-keyword">int</span>[] arr = array;
+    Random r = <span class="hljs-keyword">new</span> Random();
+    <span class="hljs-keyword">int</span> index = r.nextInt(<span class="hljs-number">5</span>);
+    System.out.println(<span class="hljs-number">10</span> / arr[index]);
+&#125; <span class="hljs-keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;
+    System.out.println(<span class="hljs-string">&quot;越界了&quot;</span>);
+&#125; <span class="hljs-keyword">catch</span> (ArithmeticException e) &#123;
+    System.out.println(<span class="hljs-string">&quot;除零了&quot;</span>);
+&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+    System.out.println(<span class="hljs-string">&quot;未知异常&quot;</span>);
+&#125;</code></pre></div>
+<p>注：范围大的异常必须在范围小的异常之后</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="136-异常的方法"><a class="markdownIt-Anchor" href="#136-异常的方法"></a> 13.6 异常的方法</h4>
+<blockquote>
+<ol>
+<li>toString()：返回异常类</li>
+<li>getMessage()：返回异常的原因</li>
+<li>e.printStackTrace()：输出发生异常的类，异常的原因和异常的位置</li>
+</ol>
+</blockquote>
+<h4 id="137-自定义异常类"><a class="markdownIt-Anchor" href="#137-自定义异常类"></a> 13.7 自定义异常类</h4>
+<blockquote>
+<p>概念：Java 中所提供的异常类不够使用时，我们可以进行自定义</p>
+<p>步骤：</p>
+<ol>
+<li>创建自定义异常类继承 Exception</li>
+<li>在自定义异常类中添加构造函数和重载的构造函数</li>
+<li>在满足发生异常条件的情况下，需要创建出自定义异常类的对象，并使用 throw 关键字抛出</li>
+</ol>
+</blockquote>
+<h3 id="十四单例设计模式"><a class="markdownIt-Anchor" href="#十四单例设计模式"></a> 十四，单例设计模式</h3>
+<blockquote>
+<p>设计模式的概念：解决开发中某些特定问题时的固定写法</p>
+<p>单例：单个实例，整个应用有且只有一个该类的对象</p>
+<p>步骤：</p>
+<ol>
+<li>构造函数私有化</li>
+<li>在本类中创建本类对象</li>
+<li>在本类中对外提供一个可以返回本类对象的方法</li>
+</ol>
+</blockquote>
+<h4 id="141-饿汉式"><a class="markdownIt-Anchor" href="#141-饿汉式"></a> 14.1 饿汉式</h4>
+<blockquote>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton1</span></span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton1</span><span class="hljs-params">()</span></span>&#123;
+	&#125;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton1 s = <span class="hljs-keyword">new</span> Singleton1();
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton1 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>&#123;
+		<span class="hljs-keyword">return</span> s;
+	&#125;
+&#125;</code></pre></div>
+</blockquote>
+<h4 id="142-懒汉式"><a class="markdownIt-Anchor" href="#142-懒汉式"></a> 14.2 懒汉式</h4>
+<blockquote>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton2</span></span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton2</span><span class="hljs-params">()</span></span>&#123;&#125;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton2 s = <span class="hljs-keyword">null</span>;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton2 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>&#123;
+		<span class="hljs-keyword">if</span>(s == <span class="hljs-keyword">null</span>)&#123;
+			s = <span class="hljs-keyword">new</span> Singleton2();
+		&#125;
+		<span class="hljs-keyword">return</span> s;
+	&#125;
+&#125;</code></pre></div>
+</blockquote>
+<h4 id="143-懒汉式与饿汉式的区别"><a class="markdownIt-Anchor" href="#143-懒汉式与饿汉式的区别"></a> 14.3 懒汉式与饿汉式的区别</h4>
+<blockquote>
+<ol>
+<li>对象创建的时机不同，饿汉式在类加载时，对象已经创建；懒汉式只有 getInstance() 方法被调用时才会创建，饿汉式的加载效率比懒汉式高。</li>
+<li>由于饿汉式中创建的对象在类加载时就已经存在，所以该对象没有被访问也会占用内存</li>
+<li>懒汉式线程不安全</li>
+</ol>
+</blockquote>
+<h4 id="144-线程安全的懒汉式"><a class="markdownIt-Anchor" href="#144-线程安全的懒汉式"></a> 14.4 线程安全的懒汉式</h4>
+<blockquote>
+<p>双重检查的单例模式   线程安全</p>
+</blockquote>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span></span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">volatile</span> Singleton instance = <span class="hljs-keyword">null</span>;
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span></span>&#123;&#125;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>&#123;
+        <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>)&#123;
+			<span class="hljs-keyword">synchronized</span> (Singleton.class)&#123;
+                <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>)&#123;
+                    instance = <span class="hljs-keyword">new</span> Singleton();
+                &#125;
+            &#125;
+        &#125;
+        <span class="hljs-keyword">return</span> instance;
+    &#125;
+&#125;</code></pre></div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/12/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">集合框架</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/11/%E6%8E%A5%E5%8F%A3/">
+                        <span class="hidden-mobile">接口</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/pllee1121" target="_blank" rel="nofollow noopener">
+        <span>Github</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2019/02/12/%E5%B8%B8%E7%94%A8%E7%B1%BB%E7%AD%89/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz'
+    var app_key = 'sNxHutMd7lXakXdx7yzpfpqY'
+    var server_url = 'https://h3koiw2p.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "常用类等&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'pllee', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127032508-1"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-127032508-1');
+    </script>
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

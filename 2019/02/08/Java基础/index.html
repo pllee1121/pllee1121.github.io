@@ -17,10 +17,23 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>标签 - Java - lpliang&#39;s space</title>
+  <title>Java基础 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +56,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,6 +160,51 @@
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-08 20:36" pubdate>
+        2019年2月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      812 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -157,37 +215,242 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">面向对象基础</span>
-      <time style="float: right;">02-08</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一概述"><a class="markdownIt-Anchor" href="#一概述"></a> 一，概述</h3>
+<h4 id="11-什么是程序-什么是程序开发"><a class="markdownIt-Anchor" href="#11-什么是程序-什么是程序开发"></a> 1.1 什么是程序、什么是程序开发</h4>
+<blockquote>
+<p>程序是为了解决生活中的实际问题使用计算机语言所编写的一系列的指令的集合。</p>
+<p>程序开发：编写软件</p>
+</blockquote>
+<h4 id="12-java的历史"><a class="markdownIt-Anchor" href="#12-java的历史"></a> 1.2 Java的历史</h4>
+<blockquote>
+<p>1995年由SUN开发的面向对象的程序设计语言。</p>
+<p>JDK1.5是2004年发布，Java被Oracle收购</p>
+<p>​	JavaME、JavaSE（标准版）、JavaEE（企业版）</p>
+<p>JDK1.8是2014年发布</p>
+</blockquote>
+<h4 id="13-java语言的特点"><a class="markdownIt-Anchor" href="#13-java语言的特点"></a> 1.3 Java语言的特点</h4>
+<blockquote>
+<p>面向对象的编程思想</p>
+<p>跨平台性：跨操作系统，一次编写、到处运行</p>
+</blockquote>
+<h3 id="二环境的搭建"><a class="markdownIt-Anchor" href="#二环境的搭建"></a> 二，环境的搭建</h3>
+<blockquote>
+<p>JDK：Java Development Kit，Java开发工具</p>
+<p>JRE：Java Runtime Enviroment，Java运行环境</p>
+<p>​	JDK中包含JRE</p>
+<p>JVM：Java Virtual Machine，Java虚拟机</p>
+<p>​	JRE中包含JVM</p>
+</blockquote>
+<blockquote>
+<p>Java程序的开发流程和执行机制：</p>
+<ol>
+<li>
+<p>编写代码，所编写的代码以 .java 为后缀</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;
+		System.out.println(<span class="hljs-string">&quot;hello java&quot;</span>);
+	&#125;
+&#125;</code></pre></div>
+</li>
+<li>
+<p>对此 java 文件进行编译，使用 javac 指令，编译后会生成对应的 .class （二进制字节码）文件</p>
+<div class="hljs"><pre><code class="hljs java">javac Test.java</code></pre></div>
+</li>
+<li>
+<p>使用 java 指令运行程序</p>
+<div class="hljs"><pre><code class="hljs cmake">java <span class="hljs-keyword">Test</span></code></pre></div>
+<p>注：代码发生改变后，需要重新编译</p>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>环境变量的配置：</p>
+<p>问：为什么要配置环境变量？<br />
+答：因为 javac 指令在 安装 java 的 bin 目录下，Java 程序的运行需要 javac 这个指令。Java 程序的位置可能是任意的，我们需要在任何地方都可以使用 javac 这个指令</p>
+<p>配置步骤：</p>
+<ol>
+<li>右键 “此电脑”，属性、高级系统设置、在“高级”标签页下点击“环境变量”</li>
+<li>在“系统变量”中新建，在“变量名”中输入“JAVA_HOME”，在“变量值”中输入 jdk 的根路径</li>
+<li>在“path”中添加 “%JAVA_HOME%\bin”、&quot;%JAVA_HOME%\jre\bin&quot;</li>
+</ol>
+</blockquote>
+<h3 id="三第一个java程序"><a class="markdownIt-Anchor" href="#三第一个java程序"></a> 三，第一个Java程序</h3>
+<blockquote>
+<p>注意事项：</p>
+<ol>
+<li>
+<p>代码的编码格式必须与 cmd 的编码格式统一</p>
+</li>
+<li>
+<p>大括号必须成对出现</p>
+</li>
+<li>
+<p>语句必须以 “;” 结尾</p>
+</li>
+<li>
+<p>符号必须使用英文的</p>
+</li>
+<li>
+<p>程序中必须有一个主函数，主函数必须被定义成</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span></code></pre></div>
+</li>
+<li>
+<p>文件中的类名必须与文件名保持一致</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="四基础语法"><a class="markdownIt-Anchor" href="#四基础语法"></a> 四，基础语法</h3>
+<h4 id="41-缩进"><a class="markdownIt-Anchor" href="#41-缩进"></a> 4.1 缩进</h4>
+<blockquote>
+<p>每一行都要按下 tab 键，向后缩进</p>
+</blockquote>
+<h4 id="42-关键字"><a class="markdownIt-Anchor" href="#42-关键字"></a> 4.2 关键字</h4>
+<blockquote>
+<p>概念：Java 中系统已经预先定义好的具有特殊含义单词</p>
+<p>例如：public、class、static、void、if、else、switch、case、for、do、while、abstract、implements、synchronized、this、super、return 等</p>
+<p>注：main 不是关键字</p>
+</blockquote>
+<h4 id="43-标识符"><a class="markdownIt-Anchor" href="#43-标识符"></a> 4.3 标识符</h4>
+<blockquote>
+<p>概念：类名、方法名、<strong>变量名都是标识符</strong></p>
+<p>规则：</p>
+<ol>
+<li>由数字、字母、下划线、美元符组成</li>
+<li>不能以数字开头</li>
+<li>不能与关键字重名</li>
+</ol>
+<p>规范：</p>
+<ol>
+<li>变量名/方法：首字母小写，多个单词组成时，从第二个单词起，每个单词的首字母大写（小驼峰）</li>
+<li>类名：每个单词的首字母大写（大驼峰）</li>
+<li>常量：所有字母全都大写，多个单词组成时，单词之间用下划线连接</li>
+<li>见名知意</li>
+<li>不宜过长</li>
+</ol>
+</blockquote>
+<h4 id="44-注释"><a class="markdownIt-Anchor" href="#44-注释"></a> 4.4 注释</h4>
+<blockquote>
+<p>概念：对代码进行解释说明文字</p>
+<p>特点：</p>
+<p>​	1.	不参与程序的运行</p>
+<ol start="2">
+<li>被注掉的代码不再运行</li>
+</ol>
+<p>格式：</p>
+<ol>
+<li>单行注释：// 注释内容</li>
+<li>多行注释：/* 注释内容 */</li>
+<li>文档注释：/** 注释内容 */</li>
+</ol>
+</blockquote>
 
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">面向对象基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -409,10 +672,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/tags/Java/index.html');
+          var target = decodeURI('/2019/02/08/Java%E5%9F%BA%E7%A1%80/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -474,6 +737,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -481,7 +769,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - Java&nbsp;",
+        "Java基础&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
@@ -496,6 +784,23 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -509,6 +814,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 

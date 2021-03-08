@@ -174,31 +174,40 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" target="_self">
-          <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/面向对象.png" srcset="/img/loading.gif" alt="面向对象基础">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/10/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">面向对象基础</a>
+        <a href="/2021/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/10/12/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">
+        <a href="/2021/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
           
           
             
           
-           继承
-在 Java中继承使用 extends关键字,不像C++中存在多继承只存在单继承即子类只能有一个直接父类.
- 继承的优点
+           一，面向对象的概念
 
-继承可以降低代码冗余度,可以把多个类中共同的代码抽象出来,减少相同代码的重复编写
+面向过程：C语言
+面向对象：Java、C++、Python
+面向过程和面向对象都是编程思想
+面向过程和面向对象的区别：
 
-在 Java中子类继承父类除 构造方法外的所有属性
-instanceof关键字的使用规则 对象 instanceof 类名判断对象是否时某个类的对象, Object类是所有类的父类,因
+面向过程：重点放在程序的功能是如何执行的，身份是执行者
+面向对象：重点放在程序的功能可以找谁来完成，身份是指挥者，面向对象的思想更加贴近实际生活
+
+
+ 二，类和对象
+
+类：数据类型，一类事物的集合
+
+
+基本信息
+
+
+行为
+
+
+对象：根据类创建出来一个实体
         </a>
       </p>
 
@@ -206,27 +215,452 @@ instanceof关键字的使用规则 对象 instanceof 类名判断对象是否时
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-12 21:22" pubdate>
-              2020-10-12
+            <time datetime="2021-02-08 23:40" pubdate>
+              2021-02-08
             </time>
           </div>
         
         
         
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/22/1-8%E6%96%B0%E7%89%B9%E6%80%A7/">1.8新特性</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/22/1-8%E6%96%B0%E7%89%B9%E6%80%A7/">
+          
+          
             
-              <a href="/tags/Java/">Java</a>
-            
-              <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/">Java面向对象基础</a>
-            
+          
+           一，函数式编程思想
+ 1.1 概念
+
+在数学中，函数就是一套计算方案。它重点放在 “ 拿什么东西就能做什么事情 ”。
+对于面向对象的编程思想而言，我们必须明确是哪一个对象来做这件事情的，
+而函数式编程思想的重点是 “ 做什么，不是以什么形式来做 。”
+
+ 1.2 函数式编程思想和面向对象思想比较案例
+
+new Thread(new Runnable()&#123;
+    @Override
+ 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-22 19:54" pubdate>
+              2019-02-22
+            </time>
           </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/19/%E5%8F%8D%E5%B0%84/">反射</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/19/%E5%8F%8D%E5%B0%84/">
+          
+          
+            
+          
+           一，类的加载
+
+当程序要使用某一个类时，如果该类还没有进入到内存，那么系统会通过加载，连接，初始化
+
+加载：将类的class文件读取到内存中，并为它创建一个 Class 对象，任何类被加载后都会创建唯一的一个 Class 对象
+连接：校验类的内部结构是否正确；为静态成员分配内存。
+初始化：创建对象
+
+
+ 二，类加载器
+
+类加载器负责将 .class 文件加载到内存中，并为它生成对应的 Class
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-19 23:53" pubdate>
+              2019-02-19
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+          
+          
+            
+          
+           一，网络编程的三要素
+ 1.1 IP地址
+
+IP（Internet Protocol Address）地址是物理地址，用于标识网络中的计算机设备
+查看本机IP地址：cmd-&gt;ipconfig
+查看网络是否连通：cmd-&gt;ping 域名/IP地址
+IPv4：是一个32的二进制数，表示形式：xxx.xxx.xxx.xxx，能够表示42亿多个IP地址
+IPv6：表示形式：xxxx:xxxx
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-17 23:52" pubdate>
+              2019-02-17
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/16/IO%E6%B5%81/">IO流</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/16/IO%E6%B5%81/">
+          
+          
+            
+          
+           一，IO流的概述
+ 1.1 什么是IO流
+
+我们把数据的传输，看成是一种数据的流动，按照指定的流向进行输出的输入和输出。以内存为基准。
+
+ 1.2 IO流的分类
+
+根据数据的流向划分：输入流 和 输出流
+​	输入流：把数据从其他设备上读取到内存中
+​	输出流：把数据从内存中写到其他设备上
+根据数据的类型划分：字节流 和 字符流
+​	字节流：以字节为单位，任何文件都可以使用字节流进行读写
+​	字符
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-16 20:51" pubdate>
+              2019-02-16
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/15/%E6%96%87%E4%BB%B6/">文件</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/15/%E6%96%87%E4%BB%B6/">
+          
+          
+            
+          
+           一，文件
+ 1.1 文件的概述
+
+概念：File 是文件或者文件夹的抽象表示形式
+
+ 1.2 构造函数
+
+
+new File(String pathname)
+new File(String parent, String child)
+new File(File parent, String child)
+
+
+ 1.3 常用方法
+
+
+
+获取相关
+
+getPath()：获取路径，返回结果与创建时的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-15 22:50" pubdate>
+              2019-02-15
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/15/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+          
+          
+            
+          
+           一，多线程的概念
+
+进程：正在运行的程序
+线程：是进程中的一个执行单元（一条执行路径），一个进程中至少包含一个线程。如果一个进程中有多个线程，这样的程序就称为多线程程序。
+线程的调度：
+
+分时调度：所有线程轮流使用CPU，每个线程平均占用CPU的时间
+抢占式调度：优先让优先级高的线程使用CPU，如果线程的优先级相同，那么随机选择一个线程为其分配CPU的资源（随机性），Java 多线程的执行方式就
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-15 22:50" pubdate>
+              2019-02-15
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/12/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">集合框架</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/12/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">
+          
+          
+            
+          
+           一，集合的概述
+
+概念：集合是一种用于存储数据的容器
+特点：
+
+集合的长度是可变的
+集合中存储的数据类型是任意的
+集合不能存储基本数据类型，要存储对应的包装类
+同一个集合中可以存储不同类型的数据
+在定义集合时，要明确集合的泛型，泛型：集合中可以存储的指定类型
+
+
+ 二，集合的体系结构
+
+Collection接口是整个集合体系中的根接口
+​	它定义了集合的共性方法
+
+add()
+addAll()
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-12 20:49" pubdate>
+              2019-02-12
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/12/%E5%B8%B8%E7%94%A8%E7%B1%BB%E7%AD%89/">常用类等</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/12/%E5%B8%B8%E7%94%A8%E7%B1%BB%E7%AD%89/">
+          
+          
+            
+          
+           一，Scanner
+
+概念：Scanner 是一个专门用于接收键盘输入的类，它在 java.util 包中的
+构造函数：
+
+new Scanner(System.in)
+
+常用功能：
+
+
+nextInt()
+
+
+nextInt(int radix)：
+举例：nextInt(2)，表示系统会将输入的内容视为二进制数，返回一个对应的十进制数
+
+
+nextDouble()
+
+
+next() 和 Str
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-12 11:48" pubdate>
+              2019-02-12
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2019/02/11/%E6%8E%A5%E5%8F%A3/">接口</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/02/11/%E6%8E%A5%E5%8F%A3/">
+          
+          
+            
+          
+           一，接口的概念
+
+概念：接口就是多个类的公共规范，接口是一种引用数据类型，它的本质是一个类，接口是一个特殊的类
+接口的作用：
+
+对外提供了标准、规范
+扩展了功能
+
+
+ 二，接口的定义
+
+关键字：interface
+格式：
+interface 接口名&#123;
+	
+&#125;
+编写接口的文件是 .java 文件
+接口在编译后生成的仍然是 .class 的二进制字节码文件
+
+ 2.1 接口中成员
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-11 23:46" pubdate>
+              2019-02-11
+            </time>
+          </div>
+        
+        
         
       </div>
     </article>
   </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 

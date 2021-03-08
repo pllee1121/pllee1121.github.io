@@ -17,10 +17,23 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>标签 - Java - lpliang&#39;s space</title>
+  <title>修饰符 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +56,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,6 +160,51 @@
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-09 23:45" pubdate>
+        2019年2月9日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      861 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -157,37 +215,241 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">修饰符</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一包和导入"><a class="markdownIt-Anchor" href="#一包和导入"></a> 一，包和导入</h3>
+<h4 id="11-包"><a class="markdownIt-Anchor" href="#11-包"></a> 1.1 包</h4>
+<blockquote>
+<p>包：本质就是文件夹</p>
+<p>问：为什么要创建不同的包？</p>
+<p>答：因为一个项目中会涉及到很多功能模块、会涉及到很多相关技术，创建不同的包，就是在创建不同的文件夹，当我们将相关的类放入到对应的文件夹（包）之后，类会更加便于管理。</p>
+<p>关键字：package</p>
+<p>注：</p>
+<ol>
+<li>每一类都应该在一个包中，并且这个类的第一行必须明确这个类的包路径（也就是明确这个类是属于哪个包的）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.qf.test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>&#123;
     
-    <a href="/2019/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">面向对象基础</span>
-      <time style="float: right;">02-08</time>
-    </a>
-  
-</div>
+&#125;</code></pre></div>
+<ol start="2">
+<li>一个类的完整路径（类全名、全类名）</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java">com.qf.test.Test;</code></pre></div>
+</blockquote>
+<h4 id="12-包的命名"><a class="markdownIt-Anchor" href="#12-包的命名"></a> 1.2 包的命名</h4>
+<blockquote>
+<p>规则：由数字、字母、下划线、美元符组成，数字不能开头</p>
+<p>规范：全小写，用 “.” 来划分不同层级的文件夹，经常使用域名倒着写。</p>
+</blockquote>
+<blockquote>
+<p>一般包名的定义：</p>
+<ol>
+<li>实体类：entity、domain、pojo、vo</li>
+<li>工具类：util</li>
+<li>测试类：test</li>
+<li>数据库相关：dao</li>
+<li>业务逻辑层：business、service</li>
+<li>控制层：controller</li>
+</ol>
+</blockquote>
+<h4 id="13-导入"><a class="markdownIt-Anchor" href="#13-导入"></a> 1.3 导入</h4>
+<blockquote>
+<p>导包：当一个类中使用到了其他包中的类时，需要将这个类的资源引入进来。</p>
+<p>注：同包中其他类的访问是不需要导包的。</p>
+<p>导入的关键字：import</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">import</span> 完整包名.类名;</code></pre></div>
+<p>按需导入：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;
+可以代替
+<span class="hljs-keyword">import</span> java.util.Random;
+<span class="hljs-keyword">import</span> java.util.Scanner;
+...</code></pre></div>
+<p>注：java.lang 中的类不需要手动导入，会自动导入</p>
+</blockquote>
+<h3 id="二范围权限修饰符"><a class="markdownIt-Anchor" href="#二范围权限修饰符"></a> 二，范围（权限）修饰符</h3>
+<blockquote>
+<ol>
+<li>public：公共的、公开的</li>
+<li>protected：受保护的</li>
+<li>[default]：默认的，在方法、成员变量前不定义任何范围修饰符</li>
+<li>private：私有的</li>
+</ol>
+<p>注：范围修饰符只能修饰成员</p>
+</blockquote>
+<blockquote>
+<p>​				                            public		             protected                 [default]               private</p>
+<p>本类中                              可以                        可以                         可以                     可以</p>
+<p>同包不同类                      可以                        可以                         可以                     不可以</p>
+<p>不同包的子类                  可以                        可以                         不可以                 不可以</p>
+<p>不同包的无关类              可以                        不可以                     不可以                 不可以</p>
+</blockquote>
+<blockquote>
+<p>适用场景：</p>
+<ol>
+<li>public：对外提供公共方法</li>
+<li>protected：父类功能需要其他包中的子类进行功能扩展时</li>
+<li>[default]：只允许在同包中使用的成员</li>
+<li>private：属性的私有化，用于辅助当前类中其他功能的执行而不应该直接被外界访问的方法</li>
+</ol>
+</blockquote>
+<h3 id="三静态"><a class="markdownIt-Anchor" href="#三静态"></a> 三，静态</h3>
+<blockquote>
+<p>静态的关键字：static</p>
+</blockquote>
+<h4 id="31-静态的特点"><a class="markdownIt-Anchor" href="#31-静态的特点"></a> 3.1 静态的特点</h4>
+<blockquote>
+<ol>
+<li>当一个类被加载到内存时，静态成员会随着类的加载而加载</li>
+<li>被静态所修饰的成员，不属于对象，而属于类</li>
+<li>被静态所修饰符的成员可以直接使用类名进行调用</li>
+<li>被静态所修饰的成员是整个类的共享数据</li>
+<li>静态成员只能访问静态的，不能访问非静态的；非静态的成员既能访问静态的也能访问非静态的</li>
+<li>静态成员不能访问 super 或者 this</li>
+<li>静态只能修饰成员</li>
+</ol>
+</blockquote>
+<h4 id="32-静态代码块"><a class="markdownIt-Anchor" href="#32-静态代码块"></a> 3.2 静态代码块</h4>
+<blockquote>
+<p>格式：</p>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> 类名</span>&#123;
+	<span class="hljs-keyword">static</span>&#123;
+		<span class="hljs-comment">// 静态代码块中的内容</span>
+	&#125;
+&#125;</code></pre></div>
+<p>特点：</p>
+<ol>
+<li>静态代码块最优先执行</li>
+<li>静态代码块只会执行一次</li>
+</ol>
+<p>作用：</p>
+<ol>
+<li>读取配置信息，加载配置内容</li>
+<li>对静态属性进行一次性的赋值</li>
+</ol>
+<p>适用场景：</p>
+<ol>
+<li>共享数据</li>
+</ol>
+<p>注：多个静态代码块会根据书写的先后顺序依次执行</p>
+</blockquote>
+<h4 id="33-静态常量"><a class="markdownIt-Anchor" href="#33-静态常量"></a> 3.3 静态常量</h4>
+<blockquote>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> 数据类型 变量名 = 值;</code></pre></div>
+</blockquote>
 
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/10/%E6%8A%BD%E8%B1%A1%E7%B1%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">抽象类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/09/%E7%BB%A7%E6%89%BF/">
+                        <span class="hidden-mobile">继承</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -409,10 +671,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/tags/Java/index.html');
+          var target = decodeURI('/2019/02/09/%E4%BF%AE%E9%A5%B0%E7%AC%A6/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -474,6 +736,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -481,7 +768,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - Java&nbsp;",
+        "修饰符&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
@@ -496,6 +783,23 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -509,6 +813,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 

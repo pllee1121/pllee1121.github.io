@@ -17,10 +17,23 @@
   <meta name="description" content="">
   <meta name="author" content="lpliang">
   <meta name="keywords" content="">
-  <title>标签 - Java - lpliang&#39;s space</title>
+  <title>反射 - lpliang&#39;s space</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +56,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,6 +160,51 @@
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-02-19 23:53" pubdate>
+        2019年2月19日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      884 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="false"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
           </div>
 
           
@@ -157,37 +215,209 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/02/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">面向对象基础</span>
-      <time style="float: right;">02-08</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">反射</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月8日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="一类的加载"><a class="markdownIt-Anchor" href="#一类的加载"></a> 一，类的加载</h3>
+<blockquote>
+<p>当程序要使用某一个类时，如果该类还没有进入到内存，那么系统会通过加载，连接，初始化</p>
+<ol>
+<li>加载：将类的class文件读取到内存中，并为它创建一个 Class 对象，任何类被加载后都会创建唯一的一个 Class 对象</li>
+<li>连接：校验类的内部结构是否正确；为静态成员分配内存。</li>
+<li>初始化：创建对象</li>
+</ol>
+</blockquote>
+<h3 id="二类加载器"><a class="markdownIt-Anchor" href="#二类加载器"></a> 二，类加载器</h3>
+<blockquote>
+<p>类加载器负责将 .class 文件加载到内存中，并为它生成对应的 Class 对象</p>
+</blockquote>
+<h3 id="三反射"><a class="markdownIt-Anchor" href="#三反射"></a> 三，反射</h3>
+<blockquote>
+<p>概念：Java的反射机制是指，程序在运行状态下，对于任何一个类，都能知道这个类中的所有属性和方法；对于任何一个对象，都能调用它的任意一个属性和方法。这种动态获取信息以及动态调用属性和方法的功能就称为反射。</p>
+<p>注：要剖析一个类的内部结构，必须先得到这个类的字节码文件对象</p>
+</blockquote>
+<h3 id="四字节码文件对象的获取"><a class="markdownIt-Anchor" href="#四字节码文件对象的获取"></a> 四，字节码文件对象的获取</h3>
+<blockquote>
+<ol>
+<li>通过对象获取</li>
+<li>通过类名获取</li>
+<li>通过 Class 类中的静态方法获取</li>
+</ol>
+<div class="hljs"><pre><code class="hljs java"><span class="hljs-comment">// 1.</span>
+Person p = <span class="hljs-keyword">new</span> Person();
+Class c1 = p.getClass();
+System.out.println(c1);
 
+System.out.println(<span class="hljs-string">&quot;-------------------------------&quot;</span>);
 
-              </div>
+<span class="hljs-comment">// 2.</span>
+Class c2 = Person.class;
+System.out.println(c2);
+
+System.out.println(<span class="hljs-string">&quot;-------------------------------&quot;</span>);
+
+<span class="hljs-comment">// 3.</span>
+<span class="hljs-comment">// 类名必须写成全限定类名（全类名）</span>
+Class c3 = Class.forName(<span class="hljs-string">&quot;com.qf.test1.Person&quot;</span>);
+System.out.println(c3);</code></pre></div>
+</blockquote>
+<h3 id="五通过反射获取构造方法并创建对象"><a class="markdownIt-Anchor" href="#五通过反射获取构造方法并创建对象"></a> 五，通过反射获取构造方法，并创建对象</h3>
+<blockquote>
+<p>通过 Class 对象可以调用以下方法获取构造器对象：</p>
+<ol>
+<li>getConstructors()：返回非私有的构造函数对象组成的数组</li>
+<li>getDeclaredConstructors()：返回所有构造函数对象组成的数组（包括私有的）</li>
+<li>getConstructor(Class…c)：获取非私有的指定参数的构造函数对象</li>
+<li>getDeclaredConstructor(Class…c)：获取指定参数的构造函数对象（包括私有的）</li>
+</ol>
+<p>通过构造器对象可以创建对象：</p>
+<ol>
+<li>newInstance(Object… o)：根据指定构造器的参数传入实参创建该类对象</li>
+<li>setAccessible(boolean b)：暴力反射，取消私有化，不建议使用，因为破坏了封装性</li>
+</ol>
+<p>注：Class 中也有 newInstance() 方法来创建该类对象，但是只能通过默认的构造函数来创建对象</p>
+</blockquote>
+<h3 id="六通过反射获取成员变量并赋值"><a class="markdownIt-Anchor" href="#六通过反射获取成员变量并赋值"></a> 六，通过反射获取成员变量，并赋值</h3>
+<blockquote>
+<p>通过 Class 对象可以调用以下方法获取属性对象：</p>
+<ol>
+<li>getFields()：返回非私有的属性对象组成的数组</li>
+<li>getDeclaredFields()：返回所有属性对象组成的数组（包括私有的）</li>
+<li>getField(String name)：通过属性名获取非私有的指定参数的属性对象</li>
+<li>getDeclaredField(String name)：通过属性名获取指定参数的属性对象（包括私有的）</li>
+</ol>
+<p>通过属性对象可以为指定对象的该属性赋值：</p>
+<ol>
+<li>set(Object obj，Object value)</li>
+<li>setAccessible(boolean b)</li>
+</ol>
+</blockquote>
+<h3 id="七通过反射获取成员方法并调用"><a class="markdownIt-Anchor" href="#七通过反射获取成员方法并调用"></a> 七，通过反射获取成员方法，并调用</h3>
+<blockquote>
+<p>​	通过 Class 对象可以调用以下方法获取方法对象：</p>
+<ol>
+<li>getMethods()：返回非私有的方法对象组成的数组（包括继承下来的）</li>
+<li>getDeclaredMethods()：返回所有方法对象组成的数组（包括私有的，不包括继承下来的）</li>
+<li>getMethod(String name, Class…c)：通过方法名和参数列表获取非私有的指定参数的方法对象</li>
+<li>getDeclaredMethod(String name, Class…c)：通过方法名和参数列表获取指定参数的方法对象（包括私有的）</li>
+</ol>
+<p>通过方法对象调用 invoke() 来执行该功能：</p>
+<ol>
+<li>invoke(Object obj, Object…o)</li>
+<li>setAccessible(boolean b)</li>
+</ol>
+</blockquote>
+
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/02/22/1-8%E6%96%B0%E7%89%B9%E6%80%A7/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">1.8新特性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                        <span class="hidden-mobile">网络编程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "H3KOIw2pyTzYQKMv6cU40Hsc-gzGzoHsz",
+          app_key: "sNxHutMd7lXakXdx7yzpfpqY",
+          placeholder: "快点来评论啊!",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://h3koiw2p.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="https://gitee.com/pllee1121/pictureRepository/raw/master/jetpacktocat.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
   </main>
 
@@ -409,10 +639,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/tags/Java/index.html');
+          var target = decodeURI('/2019/02/19/%E5%8F%8D%E5%B0%84/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -474,6 +704,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -481,7 +736,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - Java&nbsp;",
+        "反射&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 50,
@@ -496,6 +751,23 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "♦︎"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -509,6 +781,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 
